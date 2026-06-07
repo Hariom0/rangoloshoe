@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Heart, X, ShoppingBag, ArrowLeft, Flame, Star, ShoppingCart } from "lucide-react";
+import { Heart, X, ArrowLeft, Flame, Star, ShoppingCart, Check, Loader2 } from "lucide-react";
+import { addToCart } from "@/lib/utils";
 
 // --- TYPES DEFINITION MATCHING THE API PAYLOAD ---
 export interface Media {
@@ -34,6 +35,9 @@ export interface Product {
 export default function WishlistPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  
+  // Track cart status per product slug: { [slug]: "idle" | "loading" | "success" }
+  const [cartStatuses, setCartStatuses] = useState<Record<string, "idle" | "loading" | "success">>({});
 
   // Helper: Safely grab primary image or fallback
   const getPrimaryImage = (p: Product) => {
@@ -71,7 +75,7 @@ export default function WishlistPage() {
         // Fetch products by passing a clean, comma-separated slug parameter string
         const res = await fetch(`/api/products/${slugs.join(",")}`);
         if (!res.ok) throw new Error("Failed to resolve collection mapping profiles");
-        
+
         const payload = await res.json();
         if (payload.success && Array.isArray(payload.data)) {
           setProducts(payload.data);
@@ -97,13 +101,36 @@ export default function WishlistPage() {
     if (stored) {
       const slugs: string[] = JSON.parse(stored);
       const updatedSlugs = slugs.filter((s) => s !== slugToRemove);
-      
+
       if (updatedSlugs.length === 0) {
         localStorage.removeItem("wishlist");
       } else {
         localStorage.setItem("wishlist", JSON.stringify(updatedSlugs));
       }
     }
+  };
+
+  // Action Handler: Add item to cart with asynchronous feedback sequences
+  const handleAddToCartAction = (slug: string, size: string | number) => {
+    if (!size) return;
+
+    // Set status to loading for this specific product slug
+    setCartStatuses((prev) => ({ ...prev, [slug]: "loading" }));
+
+    // Short timeout sequence for visual confirmation layout timing
+    setTimeout(() => {
+      const success = addToCart(slug, size, 1);
+      if (success) {
+        setCartStatuses((prev) => ({ ...prev, [slug]: "success" }));
+
+        // Reset back to idle status after confirmation window closes
+        setTimeout(() => {
+          setCartStatuses((prev) => ({ ...prev, [slug]: "idle" }));
+        }, 1800);
+      } else {
+        setCartStatuses((prev) => ({ ...prev, [slug]: "idle" }));
+      }
+    }, 450);
   };
 
   // Render State 1: Shimmer skeleton cards during data fetching
@@ -128,19 +155,17 @@ export default function WishlistPage() {
   // Render State 2: Fallback configuration when no slugs remain
   if (products.length === 0) {
     return (
-      <div className="min-h-screen bg-white px-6 flex flex-col items-center justify-center text-center max-w-md mx-auto">
+      <div className="min-h-screen bg-white px-6 flex flex-col items-center justify-center text-center max-w-md mx-auto w-full">
         <div className="relative mb-6">
           <div className="absolute inset-0 bg-neutral-100 rounded-full scale-125 blur-sm opacity-50" />
-          <div className="relative w-20 h-20 bg-neutral-50 rounded-full flex items-center justify-center border border-neutral-100 text-neutral-400">
+          <div className="relative w-20 h-20 bg-surface rounded-full flex items-center justify-center border border-neutral-100 text-white">
             <Heart className="w-8 h-8 stroke-[1.5]" />
           </div>
         </div>
         <h2 className="text-xl font-bold text-neutral-900 tracking-tight">Your wishlist is empty</h2>
-        <p className="text-sm text-neutral-500 mt-2 max-w-[280px] leading-relaxed">
-          Tap the heart on your favorite items to save them here for later.
-        </p>
-        <button 
-          onClick={() => window.location.href = "/"}
+        <p className="text-sm text-neutral-500 mt-2 max-w-[280px] leading-relaxed">Tap the heart on your favorite items to save them here for later.</p>
+        <button
+          onClick={() => (window.location.href = "/")}
           className="mt-8 w-full h-12 bg-neutral-900 text-white rounded-xl text-sm font-semibold tracking-wide shadow-sm hover:bg-neutral-800 active:scale-[0.98] transition-transform"
         >
           Explore Collections
@@ -151,8 +176,8 @@ export default function WishlistPage() {
 
   // Render State 3: Production UI stack view
   return (
-<div className="min-h-screen bg-neutral-50/30 w-full max-w-md md:max-w-6xl mx-auto md:px-6 lg:px-8 flex flex-col transition-all">
-      {/* Top Navigation Header - Expands padding on desktop */}
+    <div className="min-h-screen bg-neutral-50/30 w-full max-w-md md:max-w-6xl mx-auto md:px-6 lg:px-8 flex flex-col transition-all">
+      {/* Top Navigation Header */}
       <header className="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-neutral-100/80 px-4 md:px-6 h-16 flex items-center justify-between md:mt-4 md:rounded-2xl md:border md:shadow-sm">
         <div className="flex items-center gap-3">
           <button onClick={() => window.history.back()} className="p-1 -ml-1 text-neutral-700 hover:text-neutral-900 active:scale-95 transition-transform">
@@ -166,11 +191,15 @@ export default function WishlistPage() {
         </div>
       </header>
 
-      {/* Main Container - Switches from vertical stack to multi-column grid layout on desktop */}
+      {/* Main Container */}
       <main className="flex-1 py-4 md:py-6 space-y-3 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 items-start overflow-y-auto">
         {products.map((product) => {
           const hasDiscount = !!(product.discountPrice && product.discountPrice < product.price);
           const activePrice = hasDiscount ? product.discountPrice! : product.price;
+          
+          // Safely acquire fallback variant size and check progress state
+          const defaultSize = product.variants[0]?.size || "";
+          const cartStatus = cartStatuses[product.slug] || "idle";
 
           return (
             <div
@@ -179,14 +208,10 @@ export default function WishlistPage() {
             >
               {/* Product Visual Container (Left Anchor) */}
               <div className="relative w-24 h-24 bg-neutral-50 rounded-xl overflow-hidden flex-shrink-0 border border-neutral-100 md:w-28 md:h-28">
-                <img
-                  src={getPrimaryImage(product)}
-                  alt={product.name}
-                  className="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
-                />
-                
+                <img src={getPrimaryImage(product)} alt={product.name} className="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500" />
+
                 {/* Dynamically Placed Mini Attribute Flags */}
-                <div className="absolute bottom-15 left-1 flex flex-col gap-0.5">
+                <div className="absolute bottom-1.5 left-1 flex flex-col gap-0.5">
                   {product.is_fresh_drop && (
                     <span className="flex items-center text-[8px] font-black uppercase tracking-wider bg-amber-500 text-neutral-950 px-1 py-0.5 rounded shadow-sm">
                       <Flame className="w-2 h-2 mr-0.5 fill-current" /> Drop
@@ -206,9 +231,7 @@ export default function WishlistPage() {
                   <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider block">
                     {product.gender} · {product.category}
                   </span>
-                  <h3 className="text-sm font-bold text-neutral-800 tracking-tight truncate mt-0.5 pr-2 md:text-base md:group-hover:text-blue-600 transition-colors">
-                    {product.name}
-                  </h3>
+                  <h3 className="text-sm font-bold text-neutral-800 tracking-tight truncate mt-0.5 pr-2 md:text-base md:group-hover:text-blue-600 transition-colors">{product.name}</h3>
                 </div>
 
                 {/* Variant tags layout */}
@@ -222,14 +245,8 @@ export default function WishlistPage() {
 
                 {/* Price Display Layout Block */}
                 <div className="flex items-baseline gap-2">
-                  <span className="text-base font-extrabold text-neutral-900 md:text-lg">
-                    {formatPrice(activePrice)}
-                  </span>
-                  {hasDiscount && (
-                    <span className="text-xs font-medium text-neutral-400 line-through">
-                      {formatPrice(product.price)}
-                    </span>
-                  )}
+                  <span className="text-base font-extrabold text-neutral-900 md:text-lg">{formatPrice(activePrice)}</span>
+                  {hasDiscount && <span className="text-xs font-medium text-neutral-400 line-through">{formatPrice(product.price)}</span>}
                 </div>
               </div>
 
@@ -244,12 +261,19 @@ export default function WishlistPage() {
                   <X className="w-3.5 h-3.5 stroke-[2.5]" />
                 </button>
 
-                {/* Direct Router Call-To-Action Button */}
+                {/* Direct Add to Cart Action Button */}
                 <button
-                  onClick={() => window.location.href = `/products/${product.slug}`}
-                  className="w-8 h-8 bg-neutral-900 hover:bg-neutral-800 text-white rounded-xl flex items-center justify-center shadow-sm active:scale-90 transition-all md:opacity-0 md:group-hover:opacity-100 md:translate-y-1 md:group-hover:translate-y-0"
+                  disabled={cartStatus !== "idle" || !defaultSize}
+                  onClick={() => handleAddToCartAction(product.slug, defaultSize)}
+                  className={`relative overflow-hidden w-8 h-8 rounded-xl flex items-center justify-center active:ring-4 transition-all duration-300 ${
+                    cartStatus === "success"
+                      ? "bg-green-600 text-white shadow-md shadow-green-100"
+                      : "bg-neutral-900 text-white active:ring-neutral-900/20 disabled:bg-neutral-300 disabled:cursor-not-allowed"
+                  }`}
                 >
-                  <ShoppingCart className="w-3.5 h-3.5" />
+                  {cartStatus === "idle" && <ShoppingCart className="w-3.5 h-3.5" />}
+                  {cartStatus === "loading" && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
+                  {cartStatus === "success" && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                 </button>
               </div>
             </div>

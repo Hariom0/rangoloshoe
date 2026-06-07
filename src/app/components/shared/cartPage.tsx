@@ -164,8 +164,8 @@ export default function CartPage() {
 	// Clean Next.js-friendly Empty Cart State
 	if (processedCartItems.length === 0) {
 		return (
-			<div className="min-h-screen bg-white px-6 flex flex-col items-center justify-center text-center max-w-md mx-auto">
-				<div className="w-20 h-20 bg-neutral-50 border border-neutral-100 rounded-full flex items-center justify-center text-neutral-400 mb-6 shadow-sm">
+			<div className="min-h-screen bg-white px-6 flex flex-col items-center justify-center text-center max-w-md mx-auto w-full">
+				<div className="w-20 h-20 bg-surface border border-neutral-100 rounded-full flex items-center justify-center text-white mb-6 shadow-sm">
 					<ShoppingBag className="w-8 h-8 stroke-[1.5]" />
 				</div>
 				<h2 className="text-xl font-bold text-neutral-900 tracking-tight">Your cart is empty</h2>

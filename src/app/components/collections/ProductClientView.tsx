@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Star, StarHalf, ShoppingBag, Heart, ChevronDown, PlayCircle, Flame, Tag, Loader2, Check } from "lucide-react";
+import { Star, StarHalf, ShoppingBag, Heart, ChevronDown, PlayCircle, Flame, Tag, Loader2, Check, ArrowLeft } from "lucide-react";
 import WhatsAppBuyButton from "../shared/WhatsAppBuyButton";
 import { addToCart } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 // --- TYPES ---
 export interface Media {
@@ -121,8 +122,19 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 	const discountPercentage = hasDiscount ? Math.round((1 - product.discountPrice! / product.price) * 100) : 0;
 	const isLiked = wishlist.includes(product.slug);
 
+	const router = useRouter()
+
 	return (
-		<main className="max-w-7xl mx-auto px-6 md:px-8 py-8">
+		<main className="max-w-7xl mx-auto px-5 md:px-8 py-2">
+			<div className="py-1">
+				<button
+					onClick={() => router.push("/collections")}
+					className="flex items-center gap-2 px-3 py-2  rounded-full  text-neutral-800 hover:text-neutral-900 hover:bg-white/70 active:scale-95 transition-all"
+				>
+					<ArrowLeft className="w-5 h-5" />
+					<span className="text-sm font-medium">Go back</span>
+				</button>
+			</div>
 			<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 				{/* --- LEFT COLUMN: GALLERY --- */}
 				<div className="lg:col-span-7 space-y-6">

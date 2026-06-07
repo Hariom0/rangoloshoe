@@ -83,7 +83,7 @@ export const FreshDropsSection = () => {
 						const discountPercentage = hasDiscount ? Math.round(((product.price - product.discountPrice!) / product.price) * 100) : null;
 
 						return (
-							<div key={product._id} className="min-w-[260px]">
+							<Link href={`/collections/${product.slug}`} key={product._id} className="min-w-[260px]">
 								<div className="group">
 									{/* Image Wrapper */}
 									<div className="relative mb-4 aspect-square overflow-hidden rounded-2xl bg-surface-container-low">
@@ -110,7 +110,7 @@ export const FreshDropsSection = () => {
 										{discountPercentage && <span className="rounded-md bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">{discountPercentage}% OFF</span>}
 									</div>
 								</div>
-							</div>
+							</Link>
 						);
 					})}
 				</div>

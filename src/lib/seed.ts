@@ -2,372 +2,369 @@ import dbconnect from "@/lib/db";
 import Footware from "@/models/Footware"; // Adjust path to where your schema is
 
 export const data = [
-    {
-        name: "Urban Stride Sneaker - Lunar Grey",
-        slug: "urban-stride-sneaker-lunar-grey",
-        description: "A sleek white and grey modern sneaker with leather texture details, perfect for everyday streetwear.",
-        gender: "Men",
-        category: "Sneakers",
-        price: 120.0,
-        discountPrice: 99.99,
-        images: [
-            { url: "https://placehold.co/600x600/e2e8f0/1e293b.png?text=Lunar+Grey+1", altText: "Urban Stride Sneaker Front View", isPrimary: true },
-            { url: "https://placehold.co/600x600/e2e8f0/1e293b.png?text=Lunar+Grey+2", altText: "Urban Stride Sneaker Side View", isPrimary: false },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", altText: "360 Degree Spin Video", isPrimary: false }
-        ],
-        variants: [
-            { size: 8, stock: 15, sku: "URB-GRY-M-08" },
-            { size: 9, stock: 22, sku: "URB-GRY-M-09" },
-            { size: 10, stock: 0, sku: "URB-GRY-M-10" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Urban Stride Sneaker - Midnight Black",
-        slug: "urban-stride-sneaker-midnight-black",
-        description: "All-black modern sneaker with matte finish details, perfect for stealthy streetwear.",
-        gender: "Men",
-        category: "Sneakers",
-        price: 120.0,
-        images: [
-            { url: "https://placehold.co/600x600/1a1a1a/ffffff.png?text=Midnight+Black+1", altText: "Urban Stride Black Main", isPrimary: true },
-            { url: "https://placehold.co/600x600/1a1a1a/ffffff.png?text=Midnight+Black+2", altText: "Urban Stride Black Sole", isPrimary: false },
-        ],
-        variants: [
-            { size: 9, stock: 5, sku: "URB-BLK-M-09" },
-            { size: 10, stock: 12, sku: "URB-BLK-M-10" },
-            { size: 11, stock: 8, sku: "URB-BLK-M-11" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Midnight Velvet Heels",
-        slug: "midnight-velvet-heels",
-        description: "Elegant stiletto heels featuring a soft velvet finish. Perfect for evening wear.",
-        gender: "Women",
-        category: "Heels",
-        price: 150.0,
-        images: [
-            { url: "https://placehold.co/600x600/2d004b/ffffff.png?text=Velvet+Heels", altText: "Midnight Velvet Heels Main", isPrimary: true },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4", altText: "Runway Video Walk", isPrimary: false }
-        ],
-        variants: [
-            { size: 6, stock: 5, sku: "MID-VEL-W-06" },
-            { size: 7, stock: 12, sku: "MID-VEL-W-07" },
-            { size: 8, stock: 8, sku: "MID-VEL-W-08" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Trailblazer Hiking Boots - Olive",
-        slug: "trailblazer-hiking-boots-olive",
-        description: "Rugged, waterproof hiking boots designed for all-terrain adventures.",
-        gender: "Unisex",
-        category: "Boots",
-        price: 185.0,
-        discountPrice: 160.0,
-        images: [
-            { url: "https://placehold.co/600x600/4b5320/ffffff.png?text=Olive+Boots+1", altText: "Trailblazer Boots Side", isPrimary: true },
-            { url: "https://placehold.co/600x600/4b5320/ffffff.png?text=Olive+Boots+2", altText: "Trailblazer Boots Tread", isPrimary: false }
-        ],
-        variants: [
-            { size: 8, stock: 30, sku: "TRL-OLV-U-08" },
-            { size: 9, stock: 45, sku: "TRL-OLV-U-09" },
-            { size: 10, stock: 20, sku: "TRL-OLV-U-10" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Kids Light-Up Dashers - Neon Blue",
-        slug: "kids-light-up-dashers-blue",
-        description: "Fun and playful sneakers that light up with every step. Easy velcro straps.",
-        gender: "Kids",
-        category: "Sneakers",
-        price: 45.0,
-        images: [
-            { url: "https://placehold.co/600x600/0000ff/ffffff.png?text=Blue+Dashers", altText: "Light-up Dashers Blue", isPrimary: true },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", altText: "LED Light Demo Video", isPrimary: false }
-        ],
-        variants: [
-            { size: 1, stock: 15, sku: "KID-BLU-01" },
-            { size: 2, stock: 18, sku: "KID-BLU-02" },
-            { size: 3, stock: 25, sku: "KID-BLU-03" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Kids Light-Up Dashers - Hot Pink",
-        slug: "kids-light-up-dashers-pink",
-        description: "Fun and playful sneakers that light up with every step. Easy velcro straps.",
-        gender: "Kids",
-        category: "Sneakers",
-        price: 45.0,
-        images: [
-            { url: "https://placehold.co/600x600/ff1493/ffffff.png?text=Pink+Dashers", altText: "Light-up Dashers Pink", isPrimary: true }
-        ],
-        variants: [
-            { size: 1, stock: 10, sku: "KID-PNK-01" },
-            { size: 2, stock: 5, sku: "KID-PNK-02" },
-            { size: 3, stock: 0, sku: "KID-PNK-03" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Classic Office Oxfords",
-        slug: "classic-office-oxfords",
-        description: "Premium genuine leather oxfords for a sharp, professional look.",
-        gender: "Men",
-        category: "Oxfords",
-        price: 140.0,
-        images: [
-            { url: "https://placehold.co/600x600/8b4513/ffffff.png?text=Brown+Oxfords", altText: "Leather Oxfords Top", isPrimary: true },
-            { url: "https://placehold.co/600x600/8b4513/ffffff.png?text=Oxfords+Side", altText: "Leather Oxfords Side", isPrimary: false }
-        ],
-        variants: [
-            { size: 9, stock: 12, sku: "OXF-BRN-M-09" },
-            { size: 10, stock: 14, sku: "OXF-BRN-M-10" },
-            { size: 11, stock: 5, sku: "OXF-BRN-M-11" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Summer Breeze Sandals",
-        slug: "summer-breeze-sandals",
-        description: "Lightweight and breathable strappy sandals ideal for beach days and casual summer outings.",
-        gender: "Women",
-        category: "Sandals",
-        price: 65.0,
-        discountPrice: 50.0,
-        images: [
-            { url: "https://placehold.co/600x600/f5deb3/000000.png?text=Sandals", altText: "Summer Breeze Sandals", isPrimary: true }
-        ],
-        variants: [
-            { size: 6, stock: 40, sku: "SND-SUM-W-06" },
-            { size: 7, stock: 55, sku: "SND-SUM-W-07" },
-            { size: 8, stock: 30, sku: "SND-SUM-W-08" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Cloud Comfort Runners - Neon Green",
-        slug: "cloud-comfort-runners-green",
-        description: "High-performance running shoes with extreme cushioning for long-distance runs.",
-        gender: "Unisex",
-        category: "Athletic",
-        price: 160.0,
-        images: [
-            { url: "https://placehold.co/600x600/39ff14/000000.png?text=Neon+Runners", altText: "Cloud Runners Profile", isPrimary: true },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", altText: "Running Action Video", isPrimary: false }
-        ],
-        variants: [
-            { size: 7, stock: 15, sku: "RUN-GRN-U-07" },
-            { size: 8, stock: 25, sku: "RUN-GRN-U-08" },
-            { size: 9, stock: 30, sku: "RUN-GRN-U-09" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Cloud Comfort Runners - Glacier White",
-        slug: "cloud-comfort-runners-white",
-        description: "High-performance running shoes with extreme cushioning for long-distance runs.",
-        gender: "Unisex",
-        category: "Athletic",
-        price: 160.0,
-        images: [
-            { url: "https://placehold.co/600x600/ffffff/000000.png?text=White+Runners", altText: "Cloud Runners White", isPrimary: true }
-        ],
-        variants: [
-            { size: 8, stock: 10, sku: "RUN-WHT-U-08" },
-            { size: 9, stock: 5, sku: "RUN-WHT-U-09" },
-            { size: 10, stock: 0, sku: "RUN-WHT-U-10" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Chelsea Suede Boots",
-        slug: "chelsea-suede-boots",
-        description: "Timeless slip-on Chelsea boots in a rich brown suede finish.",
-        gender: "Men",
-        category: "Boots",
-        price: 135.0,
-        images: [
-            { url: "https://placehold.co/600x600/d2b48c/000000.png?text=Chelsea+Boots", altText: "Brown Suede Chelsea Boot", isPrimary: true },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", altText: "Material Showcase Video", isPrimary: false }
-        ],
-        variants: [
-            { size: 8, stock: 8, sku: "BTS-CHL-M-08" },
-            { size: 9, stock: 12, sku: "BTS-CHL-M-09" },
-            { size: 10, stock: 6, sku: "BTS-CHL-M-10" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Ballet Core Flats",
-        slug: "ballet-core-flats",
-        description: "Minimalist ballet flats that provide all-day comfort without sacrificing style.",
-        gender: "Women",
-        category: "Flats",
-        price: 55.0,
-        images: [
-            { url: "https://placehold.co/600x600/ffb6c1/000000.png?text=Ballet+Flats", altText: "Pink Ballet Flats", isPrimary: true }
-        ],
-        variants: [
-            { size: 5, stock: 15, sku: "FLT-BAL-W-05" },
-            { size: 6, stock: 22, sku: "FLT-BAL-W-06" },
-            { size: 7, stock: 18, sku: "FLT-BAL-W-07" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Toddler Splash Rainboots",
-        slug: "toddler-splash-rainboots",
-        description: "Bright yellow rubber boots to keep tiny feet dry during puddle-jumping sessions.",
-        gender: "Kids",
-        category: "Boots",
-        price: 35.0,
-        discountPrice: 25.0,
-        images: [
-            { url: "https://placehold.co/600x600/ffff00/000000.png?text=Yellow+Rainboots", altText: "Yellow Rainboots", isPrimary: true }
-        ],
-        variants: [
-            { size: 3, stock: 40, sku: "KID-RNB-03" },
-            { size: 4, stock: 35, sku: "KID-RNB-04" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Retro Canvas High-Tops - Red",
-        slug: "retro-canvas-high-tops-red",
-        description: "Old-school high-top sneakers made from durable organic cotton canvas.",
-        gender: "Unisex",
-        category: "Sneakers",
-        price: 75.0,
-        images: [
-            { url: "https://placehold.co/600x600/ff0000/ffffff.png?text=Red+High+Tops", altText: "Red High-Tops", isPrimary: true },
-            { url: "https://placehold.co/600x600/ff0000/ffffff.png?text=Red+High+Tops+Side", altText: "Red High-Tops Side", isPrimary: false }
-        ],
-        variants: [
-            { size: 6, stock: 50, sku: "SNK-RED-U-06" },
-            { size: 7, stock: 45, sku: "SNK-RED-U-07" },
-            { size: 8, stock: 60, sku: "SNK-RED-U-08" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Penny Loafers Essential",
-        slug: "penny-loafers-essential",
-        description: "The ultimate smart-casual slip-on shoe, crafted from polished black leather.",
-        gender: "Men",
-        category: "Loafers",
-        price: 115.0,
-        images: [
-            { url: "https://placehold.co/600x600/000000/ffffff.png?text=Black+Loafers", altText: "Black Penny Loafers", isPrimary: true }
-        ],
-        variants: [
-            { size: 8, stock: 10, sku: "LOA-PEN-M-08" },
-            { size: 9, stock: 15, sku: "LOA-PEN-M-09" },
-            { size: 10, stock: 20, sku: "LOA-PEN-M-10" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Chunky Platform Boots",
-        slug: "chunky-platform-boots",
-        description: "Edgy platform boots with a 3-inch chunky heel and side zipper.",
-        gender: "Women",
-        category: "Boots",
-        price: 130.0,
-        images: [
-            { url: "https://placehold.co/600x600/1a1a1a/ffffff.png?text=Platform+Boots", altText: "Black Platform Boots", isPrimary: true },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4", altText: "Lookbook Video", isPrimary: false }
-        ],
-        variants: [
-            { size: 6, stock: 12, sku: "BTS-PLT-W-06" },
-            { size: 7, stock: 25, sku: "BTS-PLT-W-07" },
-            { size: 8, stock: 14, sku: "BTS-PLT-W-08" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Cozy Home Slippers",
-        slug: "cozy-home-slippers",
-        description: "Fleece-lined indoor slippers to keep your feet warm during winter.",
-        gender: "Unisex",
-        category: "Slippers",
-        price: 30.0,
-        discountPrice: 19.99,
-        images: [
-            { url: "https://placehold.co/600x600/808080/ffffff.png?text=Grey+Slippers", altText: "Grey Fleece Slippers", isPrimary: true }
-        ],
-        variants: [
-            { size: 7, stock: 100, sku: "SLP-CZY-U-07" },
-            { size: 9, stock: 120, sku: "SLP-CZY-U-09" },
-            { size: 11, stock: 80, sku: "SLP-CZY-U-11" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Kids Turf Soccer Cleats",
-        slug: "kids-turf-soccer-cleats",
-        description: "Durable soccer cleats designed for youth leagues and artificial turf.",
-        gender: "Kids",
-        category: "Athletic",
-        price: 55.0,
-        images: [
-            { url: "https://placehold.co/600x600/00ff00/000000.png?text=Neon+Cleats", altText: "Neon Green Soccer Cleats", isPrimary: true }
-        ],
-        variants: [
-            { size: 4, stock: 30, sku: "KID-SOC-04" },
-            { size: 5, stock: 35, sku: "KID-SOC-05" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Breathable Mesh Slip-ons",
-        slug: "breathable-mesh-slip-ons",
-        description: "Ultra-lightweight slip-on walking shoes with a breathable mesh upper.",
-        gender: "Men",
-        category: "Sneakers",
-        price: 85.0,
-        images: [
-            { url: "https://placehold.co/600x600/000080/ffffff.png?text=Navy+Slip-on", altText: "Navy Mesh Slip-on", isPrimary: true }
-        ],
-        variants: [
-            { size: 9, stock: 40, sku: "SNK-MSH-M-09" },
-            { size: 10, stock: 45, sku: "SNK-MSH-M-10" },
-            { size: 11, stock: 20, sku: "SNK-MSH-M-11" },
-        ],
-        isActive: true,
-    },
-    {
-        name: "Winter Snow Muckers",
-        slug: "winter-snow-muckers",
-        description: "Insulated and fully waterproof boots for deep snow and extreme cold.",
-        gender: "Men",
-        category: "Boots",
-        price: 160.0,
-        discountPrice: 125.0,
-        images: [
-            { url: "https://placehold.co/600x600/4a4a4a/ffffff.png?text=Snow+Boots", altText: "Tall Winter Snow Boots", isPrimary: true },
-            { url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4", altText: "Waterproof Test Video", isPrimary: false }
-        ],
-        variants: [
-            { size: 9, stock: 15, sku: "BTS-SNW-M-09" },
-            { size: 10, stock: 10, sku: "BTS-SNW-M-10" },
-            { size: 12, stock: 5, sku: "BTS-SNW-M-12" },
-        ],
-        isActive: false, // Intentionally set false to test UI rendering logic
-    }
+	{
+		name: "MetroRun Lite Knit Sneakers",
+		slug: "metrorun-lite-knit-sneakers",
+		description:
+			"The MetroRun Lite Knit Sneakers combine breathable engineered knit with a responsive EVA midsole to deliver day-long comfort for city living. The lightweight knit upper adapts to foot shape, while a padded collar and removable foam insole provide underfoot support for commuting, casual workouts, and weekend outings. Rubber outsole with flex grooves ensures reliable traction and long-wearing durability on concrete and tiled surfaces. Subtle reflective trims add safety for low-light runs, and the clean silhouette pairs well with jeans or athleisure wear. Materials: engineered polyester knit upper, EVA midsole, rubber outsole. Comfort: breathable knit, padded tongue and removable ortholite-like insole. Use cases: daily commute, casual running, gym warm-ups, travel. Durability: reinforced toe cap and abrasion-resistant outsole for extended life. Style: modern low-top design with minimal branding for versatile urban styling.",
+		gender: "Unisex",
+		category: "Sneakers",
+		price: 4499,
+		discountPrice: 3599,
+		is_bestseller: true,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg", altText: "MetroRun Lite Knit Sneakers front view black on concrete", isPrimary: true },
+			{ url: "https://images.pexels.com/photos/2529150/pexels-photo-2529150.jpeg", altText: "Side profile of MetroRun navy knit sneaker", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/2529149/pexels-photo-2529149.jpeg", altText: "Top view of white MetroRun knit upper and laces", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/2529151/pexels-photo-2529151.jpeg", altText: "Sole view showing rubber tread pattern", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/2529152/pexels-photo-2529152.jpeg", altText: "Detail close-up of knit material and stitching", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/2529154/pexels-photo-2529154.jpeg", altText: "Lifestyle shot: person wearing MetroRun sneakers while walking in city", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/2529155/pexels-photo-2529155.jpeg", altText: "Alternate angle of MetroRun on wooden floor", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 17, sku: "METR-4" },
+			{ size: 5, stock: 22, sku: "METR-5" },
+			{ size: 6, stock: 27, sku: "METR-6" },
+			{ size: 7, stock: 28, sku: "METR-7" },
+			{ size: 8, stock: 28, sku: "METR-8" },
+			{ size: 9, stock: 19, sku: "METR-9" },
+			{ size: 10, stock: 19, sku: "METR-10" },
+		],
+	},
+	{
+		name: "ExecutiveCraft Leather Oxford",
+		slug: "executivecraft-leather-oxford",
+		description:
+			"ExecutiveCraft Leather Oxford is a polished formal shoe crafted for boardroom confidence and all-day wear. Full-grain leather uppers are hand-finished to a subtle sheen, while a leather-lined interior and cushioned leather sock provide breathable comfort for long meetings and events. A stacked heel and stitched welt construction add structural durability, and a rubberised leather outsole gives secure footing on office floors. The shoe balances classic oxford styling with modern cushioning to suit suits, blazers, and formal ensembles. Materials: full-grain leather upper, leather lining, cushioned sock, rubberised leather outsole. Comfort: anatomical footbed with moderate arch support. Use cases: corporate, weddings, presentations, professional events. Durability: welted construction and reinforced heel counter for prolonged life. Style: timeless cap-toe oxford with minimalist detailing.",
+		gender: "Men",
+		category: "Formal",
+		price: 5999,
+		discountPrice: 4799,
+		is_bestseller: false,
+		is_fresh_drop: true,
+		isActive: true,
+		images: [
+			{ url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff", altText: "ExecutiveCraft Leather Oxford front view dark brown on studio white", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1522337660859-02fbefca4702", altText: "Side profile showing stitched welt and heel", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/19090/pexels-photo.jpg", altText: "Top view showing lacing and leather finish", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/680164/pexels-photo-680164.jpeg", altText: "Sole view showing rubberised leather outsole", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f", altText: "Detail close-up of full-grain leather texture", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg", altText: "Lifestyle shot: man wearing oxfords with formal suit", isPrimary: false },
+		],
+		variants: [
+			{ size: 6, stock: 9, sku: "EXEC-6" },
+			{ size: 7, stock: 16, sku: "EXEC-7" },
+			{ size: 8, stock: 21, sku: "EXEC-8" },
+			{ size: 9, stock: 22, sku: "EXEC-9" },
+			{ size: 10, stock: 19, sku: "EXEC-10" },
+			{ size: 11, stock: 11, sku: "EXEC-11" },
+		],
+	},
+	{
+		name: "EverTrek Leather Hiking Boot",
+		slug: "evertrek-leather-hiking-boot",
+		description:
+			"EverTrek Leather Hiking Boot is built for rugged trails and wet-weather commutes. Premium nubuck leather uppers with a sealed seam treatment resist moisture and abrasion, while a cushioned PU midsole and EVA heel cup provide impact protection on uneven terrain. The lugged rubber outsole offers multi-surface traction, and a reinforced toe cap plus ankle support construction ensure stability during ascents. Breathable mesh lining maintains airflow, and speed-lace hardware makes field adjustments quick. Materials: nubuck leather upper, mesh lining, PU midsole, rubber lug outsole. Comfort: padded ankle collar and contoured footbed for long treks. Use cases: hiking, trail walking, outdoor work, rainy-season travel. Durability: heavy-duty stitching and metal eyelets for long service life. Style: utilitarian mid-height boot with classic outdoor silhouette.",
+		gender: "Unisex",
+		category: "Boots",
+		price: 7999,
+		discountPrice: 6399,
+		is_bestseller: true,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/681335/pexels-photo-681335.jpeg", altText: "EverTrek Leather Hiking Boot front view olive on rock", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e", altText: "Side profile showing lugged outsole and ankle support", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=627&w=1200", altText: "Top view showing lacing and padded collar", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1526318472351-c75fcf070ee5", altText: "Sole view of aggressive tread pattern", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/210395/pexels-photo-210395.jpeg", altText: "Detail close-up of nubuck leather and metal eyelets", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg", altText: "Lifestyle shot: hiker wearing EverTrek on a trail", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1520975698514-6f7e4b4a6b5b", altText: "Alternate angle showing reinforced toe cap", isPrimary: false },
+		],
+		variants: [
+			{ size: 6, stock: 11, sku: "EVER-6" },
+			{ size: 7, stock: 19, sku: "EVER-7" },
+			{ size: 8, stock: 23, sku: "EVER-8" },
+			{ size: 9, stock: 24, sku: "EVER-9" },
+			{ size: 10, stock: 22, sku: "EVER-10" },
+			{ size: 11, stock: 11, sku: "EVER-11" },
+		],
+	},
+	{
+		name: "ProCourt Performance Training Shoes",
+		slug: "procourt-performance-training-shoes",
+		description:
+			"ProCourt Performance Training Shoes are engineered for dynamic gym sessions and court sports. A breathable engineered mesh upper and supportive TPU midfoot cage provide lateral stability during quick cuts, while responsive dual-density EVA cushioning absorbs impact and returns energy for explosive movements. The non-marking rubber outsole features multi-directional grooves for grip on indoor courts and gym floors. Lightweight and ventilated, these shoes keep feet cool during HIIT, agility drills, and racquet sports. Materials: engineered mesh upper, TPU reinforcements, EVA midsole, rubber outsole. Comfort: padded tongue and anatomic footbed for long training sessions. Use cases: indoor sports, gym training, cross-training, court play. Durability: reinforced toe overlays and robust outsole compound for high-wear zones. Style: athletic low-cut silhouette with contrast TPU accents.",
+		gender: "Men",
+		category: "Sports",
+		price: 3899,
+		discountPrice: 3314,
+		is_bestseller: false,
+		is_fresh_drop: true,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/2529149/pexels-photo-2529149.jpeg", altText: "ProCourt Performance training shoes front view white blue", isPrimary: true },
+			{ url: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg", altText: "Side profile showing TPU midfoot cage", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1542293787938-c9e299b880b5", altText: "Top view detailing breathable mesh upper", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/313755/pexels-photo-313755.jpeg", altText: "Sole view with non-marking tread", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f", altText: "Detail close-up of stitching and foam midsole", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg", altText: "Lifestyle shot: athlete tying laces before training", isPrimary: false },
+		],
+		variants: [
+			{ size: 6, stock: 11, sku: "PROC-6" },
+			{ size: 7, stock: 17, sku: "PROC-7" },
+			{ size: 8, stock: 22, sku: "PROC-8" },
+			{ size: 9, stock: 23, sku: "PROC-9" },
+			{ size: 10, stock: 21, sku: "PROC-10" },
+			{ size: 11, stock: 13, sku: "PROC-11" },
+		],
+	},
+	{
+		name: "LunaGrace Stiletto Heels",
+		slug: "lunagrace-stiletto-heels",
+		description:
+			"LunaGrace Stiletto Heels deliver feminine elegance with all-day wearability. Smooth PU leather uppers and a soft microfiber lining keep the foot comfortable, while a cushioned insole reduces pressure on the ball of the foot. The slender 3.5-inch stiletto heel is balanced with a reinforced heel counter and non-slip toe tip for more secure steps. Perfect for cocktail parties, weddings, and evening events, these heels offer a refined silhouette and polished finish. Materials: PU leather upper, microfiber lining, padded insole, synthetic heel and outsole. Comfort: cushioned insole and stabilised heel base. Use cases: formal events, parties, evening wear. Durability: durable sole compound and reinforced heel join. Style: classic pointed-toe stiletto with minimal hardware for sleek looks.",
+		gender: "Women",
+		category: "Heels",
+		price: 3499,
+		discountPrice: 2799,
+		is_bestseller: false,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg", altText: "LunaGrace Stiletto Heels front view red on white background", isPrimary: true },
+			{ url: "https://images.pexels.com/photos/2529143/pexels-photo-2529143.jpeg", altText: "Side profile of black stiletto highlighting heel height", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9", altText: "Top view showing pointed toe and vamp", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg", altText: "Sole view showing synthetic outsole", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1519745161461-0f6b1b1b3cbb", altText: "Detail close-up of PU leather finish", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/1552333/pexels-photo-1552333.jpeg", altText: "Lifestyle shot: woman wearing LunaGrace at an evening event", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 9, sku: "LUNA-4" },
+			{ size: 5, stock: 15, sku: "LUNA-5" },
+			{ size: 6, stock: 19, sku: "LUNA-6" },
+			{ size: 7, stock: 21, sku: "LUNA-7" },
+			{ size: 8, stock: 20, sku: "LUNA-8" },
+		],
+	},
+	{
+		name: "CoastWalk Leather Comfort Sandals",
+		slug: "coastwalk-leather-comfort-sandals",
+		description:
+			"CoastWalk Leather Comfort Sandals blend classic leather construction with ergonomic support for everyday summer wear. Soft full-grain leather straps and a cushioned cork-like footbed conform to the heel and arch, offering reduced fatigue on long walks. A durable rubber outsole with subtle tread ensures stability on urban surfaces and boardwalks. The adjustable buckle closure allows a customised fit, and breathable lining keeps feet cool. Materials: full-grain leather straps, cork-comfort footbed, rubber outsole. Comfort: contoured footbed with arch support and heel cupping. Use cases: city strolling, travel, casual dining, summer outings. Durability: stitched strap joins and abrasion-resistant outsole for lasting performance. Style: timeless two-strap sandal with rugged-casual aesthetic.",
+		gender: "Men",
+		category: "Sandals",
+		price: 2499,
+		discountPrice: 1999,
+		is_bestseller: true,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/19090/pexels-photo.jpg", altText: "CoastWalk Leather Sandals front view tan on wooden deck", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5", altText: "Side profile highlighting cork-like footbed", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/35600/footwear-shoes-leisure-footwear.jpg", altText: "Top view showing adjustable buckles", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1505842465776-3d42d8f9e9b6", altText: "Sole view showing rubber tread", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg", altText: "Detail close-up of leather strap and stitching", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1541795922-7d3f8d86cde2", altText: "Lifestyle shot: person wearing CoastWalk on seaside boardwalk", isPrimary: false },
+		],
+		variants: [
+			{ size: 6, stock: 12, sku: "COAS-6" },
+			{ size: 7, stock: 19, sku: "COAS-7" },
+			{ size: 8, stock: 24, sku: "COAS-8" },
+			{ size: 9, stock: 30, sku: "COAS-9" },
+			{ size: 10, stock: 18, sku: "COAS-10" },
+			{ size: 11, stock: 17, sku: "COAS-11" },
+		],
+	},
+	{
+		name: "AquaFlex Beach FlipFlop",
+		slug: "aquaflex-beach-flipflop",
+		description:
+			"AquaFlex Beach FlipFlop is a lightweight everyday pair designed for water-friendly comfort. Soft EVA footbed with textured anti-slip surface and quick-dry synthetic straps keep feet secure and comfortable around pools, beaches, and showers. The flexible sole offers shock absorption for casual walks and the reinforced toe post reduces chafing. Materials: EVA footbed, synthetic straps, rubberised outsole. Comfort: cushioned, contoured footbed with textured grip. Use cases: beach, poolside, casual summer wear, home. Durability: molded EVA construction resists water damage and fading. Style: simple low-profile thong with bright seasonal colours.",
+		gender: "Unisex",
+		category: "FlipFlops",
+		price: 699,
+		discountPrice: 559,
+		is_bestseller: false,
+		is_fresh_drop: true,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg", altText: "AquaFlex Beach FlipFlop front view aqua on sand", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e", altText: "Side view showing contoured EVA footbed", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/34516/pexels-photo.jpg", altText: "Top view with textured grip surface", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6", altText: "Sole view of flexible grooved outsole", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg", altText: "Detail close-up of strap and toe post", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee", altText: "Lifestyle shot: flipflops on beach towel near shoreline", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 18, sku: "AQUA-4" },
+			{ size: 5, stock: 30, sku: "AQUA-5" },
+			{ size: 6, stock: 37, sku: "AQUA-6" },
+			{ size: 7, stock: 44, sku: "AQUA-7" },
+			{ size: 8, stock: 33, sku: "AQUA-8" },
+			{ size: 9, stock: 26, sku: "AQUA-9" },
+		],
+	},
+	{
+		name: "CrocComfort Lite Clogs",
+		slug: "croccomfort-lite-clogs",
+		description:
+			"CrocComfort Lite Clogs are water-friendly, lightweight clogs ideal for casual wear and long shifts on your feet. Molded EVA construction creates a soft, supportive footbed with targeted arch support and heel cupping. Ventilation ports increase airflow and allow water drainage for quick drying after pool or garden use. The slip-resistant outsole and ergonomic heel strap provide a secure fit during active tasks. Materials: molded EVA/foam upper and sole. Comfort: cushioned footbed with arch support and soft heel strap. Use cases: gardening, home, beach, healthcare shifts, quick errands. Durability: closed-cell foam resists stains and is easy to clean. Style: utilitarian clog silhouette in playful colours.",
+		gender: "Unisex",
+		category: "Crocs",
+		price: 1999,
+		discountPrice: 1599,
+		is_bestseller: true,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg", altText: "CrocComfort Lite Clogs front view navy on stone", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6", altText: "Side profile with ventilated ports", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg", altText: "Top view showing heel strap down", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1520975698514-6f7e4b4a6b5b", altText: "Sole view showing slip-resistant pattern", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/386025/pexels-photo-386025.jpeg", altText: "Detail close-up of EVA molded footbed", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee", altText: "Lifestyle shot: person wearing clogs in garden", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/34516/pexels-photo.jpg", altText: "Alternate angle showing heel strap up", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 19, sku: "CROC-4" },
+			{ size: 5, stock: 30, sku: "CROC-5" },
+			{ size: 6, stock: 38, sku: "CROC-6" },
+			{ size: 7, stock: 45, sku: "CROC-7" },
+			{ size: 8, stock: 40, sku: "CROC-8" },
+			{ size: 9, stock: 22, sku: "CROC-9" },
+			{ size: 10, stock: 6, sku: "CROC-10" },
+		],
+	},
+	{
+		name: "SlideEase Comfort Slide",
+		slug: "slideease-comfort-slide",
+		description:
+			"SlideEase Comfort Slide offers no-fuss comfort with a wide contoured strap and plush midsole. The soft synthetic upper is lined with microfiber for reduced friction, while a cloud-like EVA footbed absorbs shock during casual wear. The textured outsole offers basic traction for indoor and light outdoor use. Quick to slip on and off, these are perfect for dorm life, post-gym recovery, and quick errands. Materials: synthetic upper, microfiber lining, EVA footbed, rubberised outsole. Comfort: ergonomically contoured footbed with moderate arch support. Use cases: indoor lounging, gym, travel, running quick errands. Durability: molded construction resists deformation under typical use. Style: minimalist single-band slide in neutral tones.",
+		gender: "Unisex",
+		category: "Slides",
+		price: 1299,
+		discountPrice: 1049,
+		is_bestseller: false,
+		is_fresh_drop: true,
+		isActive: true,
+		images: [
+			{ url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e", altText: "SlideEase Comfort Slide front view grey on neutral background", isPrimary: true },
+			{ url: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg", altText: "Side profile showing contoured footbed", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg", altText: "Top view of wide microfiber strap", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6", altText: "Sole view with light tread pattern", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/313755/pexels-photo-313755.jpeg", altText: "Detail close-up of footbed texture", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1542293787938-c9e299b880b5", altText: "Lifestyle shot: person wearing slides by locker room", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 16, sku: "SLID-4" },
+			{ size: 5, stock: 25, sku: "SLID-5" },
+			{ size: 6, stock: 31, sku: "SLID-6" },
+			{ size: 7, stock: 37, sku: "SLID-7" },
+			{ size: 8, stock: 36, sku: "SLID-8" },
+			{ size: 9, stock: 17, sku: "SLID-9" },
+		],
+	},
+	{
+		name: "HarborStep Casual Canvas Shoes",
+		slug: "harborstep-casual-canvas-shoes",
+		description:
+			"HarborStep Casual Canvas Shoes are everyday essentials with durable canvas uppers and a vulcanised rubber sole for classic street-casual style. The breathable cotton canvas upper and soft textile lining keep feet comfortable during long campus days and casual hangouts. An EVA insole provides light cushioning while reinforced toe stitching increases longevity in high-wear areas. Easy to pair with jeans or chinos, these shoes are ideal for study sessions, coffee runs, and light travel. Materials: cotton canvas upper, textile lining, EVA insole, vulcanised rubber outsole. Comfort: cushioned insole and flexible sole for all-day wear. Use cases: daily campus wear, commuting, casual outings. Durability: reinforced stitching and durable rubber sole. Style: low-top canvas with rounded toe and minimal branding.",
+		gender: "Unisex",
+		category: "Casual Footwear",
+		price: 1999,
+		discountPrice: 1599,
+		is_bestseller: true,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg", altText: "HarborStep Casual Canvas Shoes front view off white", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1520975698514-6f7e4b4a6b5b", altText: "Side profile showing vulcanised rubber sole", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/34600/pexels-photo.jpg", altText: "Top view showing lacing and canvas texture", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1", altText: "Sole view showing rubber sole pattern", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg", altText: "Detail close-up of reinforced toe stitching", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e", altText: "Lifestyle shot: student wearing HarborStep on campus", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 16, sku: "HARB-4" },
+			{ size: 5, stock: 25, sku: "HARB-5" },
+			{ size: 6, stock: 32, sku: "HARB-6" },
+			{ size: 7, stock: 38, sku: "HARB-7" },
+			{ size: 8, stock: 37, sku: "HARB-8" },
+			{ size: 9, stock: 18, sku: "HARB-9" },
+		],
+	},
+	{
+		name: "RegalStride Derby Formal",
+		slug: "regalstride-derby-formal",
+		description:
+			"RegalStride Derby Formal blends classic derby construction with modern comfort technology for everyday professional use. Polished leather uppers cushion at the vamp while a breathable leather lining and memory-foam like insole provide comfort through long office hours. The blake-stitched assembly increases flexibility and reduces break-in time, while a durable rubber outsole adds traction for marble and tiled floors. Materials: polished leather upper, leather lining, cushioned insole, rubber outsole. Comfort: memory-foam insole and breathable lining for prolonged wear. Use cases: office, client meetings, formal dinners. Durability: reinforced eyelets and robust outsole for lasting performance. Style: sleek derby with subtle perforation and rounded toe.",
+		gender: "Men",
+		category: "Formal",
+		price: 4999,
+		discountPrice: 3999,
+		is_bestseller: false,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9", altText: "RegalStride Derby Formal front view black on a polished floor", isPrimary: true },
+			{ url: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg", altText: "Side view showing Blake stitch and heel", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f", altText: "Top view showing lacing and perforation details", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/19090/pexels-photo.jpg", altText: "Sole view showing rubber outsole pattern", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5", altText: "Detail close-up of leather grain and stitching", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/680164/pexels-photo-680164.jpeg", altText: "Lifestyle shot: professional wearing Derby with suit", isPrimary: false },
+		],
+		variants: [
+			{ size: 6, stock: 9, sku: "REGA-6" },
+			{ size: 7, stock: 18, sku: "REGA-7" },
+			{ size: 8, stock: 23, sku: "REGA-8" },
+			{ size: 9, stock: 24, sku: "REGA-9" },
+			{ size: 10, stock: 20, sku: "REGA-10" },
+			{ size: 11, stock: 6, sku: "REGA-11" },
+		],
+	},
+	{
+		name: "CourtPulse Badminton Shoe",
+		slug: "courtpulse-badminton-shoe",
+		description:
+			"CourtPulse Badminton Shoe is a lightweight court shoe optimised for rapid directional changes and foot stability. Breathable mesh upper with TPU overlays supports lateral movement while a low-profile EVA midsole and reinforced heel stabiliser reduce energy loss during lunges and jumps. The gum rubber non-marking outsole delivers exceptional grip on indoor courts. Cushioning and a snug heel lock make these ideal for badminton, shuttle, and indoor training sessions. Materials: engineered mesh upper, TPU overlays, EVA midsole, gum rubber outsole. Comfort: padded collar and anatomical insole for court comfort. Use cases: badminton, indoor court sports, agility training. Durability: reinforced toe cap and robust rubber outsole for frequent court use. Style: athletic court-specific silhouette with contrast piping.",
+		gender: "Unisex",
+		category: "Sports",
+		price: 4299,
+		discountPrice: 3440,
+		is_bestseller: true,
+		is_fresh_drop: false,
+		isActive: true,
+		images: [
+			{ url: "https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg", altText: "CourtPulse Badminton Shoe front view white gum outsole", isPrimary: true },
+			{ url: "https://images.unsplash.com/photo-1542291026-7eec264c27ff", altText: "Side profile showing low EVA midsole and TPU overlays", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg", altText: "Top view showing snug lacing and tongue", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e", altText: "Sole view with gum rubber non-marking outsole", isPrimary: false },
+			{ url: "https://images.pexels.com/photos/313755/pexels-photo-313755.jpeg", altText: "Detail close-up of mesh upper and reinforcement", isPrimary: false },
+			{ url: "https://images.unsplash.com/photo-1520975698514-6f7e4b4a6b5b", altText: "Lifestyle shot: player on indoor court wearing CourtPulse", isPrimary: false },
+		],
+		variants: [
+			{ size: 4, stock: 11, sku: "COUR-4" },
+			{ size: 5, stock: 17, sku: "COUR-5" },
+			{ size: 6, stock: 22, sku: "COUR-6" },
+			{ size: 7, stock: 27, sku: "COUR-7" },
+			{ size: 8, stock: 26, sku: "COUR-8" },
+			{ size: 9, stock: 17, sku: "COUR-9" },
+			{ size: 10, stock: 4, sku: "COUR-10" },
+		],
+	},
 ];
 
 export default async function seedData() {
 	await dbconnect();
 
 	// Clear out the old data (optional, be careful in production!)
-	await Footware.deleteMany({});
+	// await Footware.deleteMany({});
 
 	// Insert the 20 sample items
-	// await Footware.insertMany(data);
+	await Footware.insertMany(data);
 
 	console.log("Database seeded successfully!");
 }

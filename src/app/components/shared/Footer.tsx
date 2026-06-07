@@ -70,19 +70,22 @@ export const Footer = () => {
 
 						{/* Social / Action Icons */}
 						<div className="mt-6 flex items-center gap-4">
-
-							<button
+							<Link
+								href="https://wa.me/919934745626?text=Hello%20Rangoli%20Shoes,%20I%20have%20a%20question..."
+								target="_blank"
+								rel="noopener noreferrer"
 								aria-label="WhatsApp"
 								className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 transition-all duration-300 hover:bg-primary hover:text-white active:scale-95"
 							>
 								<MessageCircle size={18} />
-							</button>
-							<button
+							</Link>
+							<Link
+								href="mailto:hello@rangolishoes.com?subject=Website%20Inquiry"
 								aria-label="Email"
 								className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 transition-all duration-300 hover:bg-primary hover:text-white active:scale-95"
 							>
 								<Mail size={18} />
-							</button>
+							</Link>
 						</div>
 					</div>
 
@@ -125,7 +128,6 @@ export const Footer = () => {
 						</Link>
 
 						<p className="max-w-sm text-sm leading-relaxed text-white/60">Crafting Indian luxury footwear since 1984. We believe in the power of handmade heritage and modern design thinking.</p>
-
 					</div>
 
 					{/* Desktop Links */}
