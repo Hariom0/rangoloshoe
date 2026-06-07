@@ -6,9 +6,9 @@ export async function GET() {
 	await dbconnect();
 
 	try {
-		let [freshDrops, bestSellers] = await Promise.all([Footware.countDocuments({ is_fresh_drop: true }), Footware.countDocuments({ is_bestseller: true })]);
+		let [freshDrops, bestSellers , total] = await Promise.all([Footware.countDocuments({ is_fresh_drop: true }), Footware.countDocuments({ is_bestseller: true }) , Footware.countDocuments()]);
 
-		return NextResponse.json({freshDrops , bestSellers});
+		return NextResponse.json({freshDrops , bestSellers , total});
 	} catch (error) {
 		console.error("Database fetch error:", error);
 		// FIX: Added return statement and a 500 status code

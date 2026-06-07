@@ -26,7 +26,6 @@ async function handle<T>(res: Response): Promise<T> {
 		let msg = `Request failed (${res.status})`;
 		try {
 			const j = await res.json();
-			console.log(j)
 			msg = j.message || j.error || msg;
 		} catch {}
 		throw new Error(msg);
@@ -41,10 +40,11 @@ export interface ProductFilters {
 	category?: string;
 }
 
-export async function fetchProducts(filters: ProductFilters = {}): Promise<any> {
+export async function fetchProducts(filters: any = {}): Promise<any> {
 	const url = buildUrl("/api/products", {
 		gender: filters.gender,
 		category: filters.category,
+		page: filters?.page || 1
 	});
 	const res = await fetch(url);
 	const data = await handle<any>(res);
@@ -89,9 +89,6 @@ function buildFormData(payload: Partial<ProductFormPayload>) {
 		const meta = payload.mediaMetadata || payload.files.map((_, i) => ({ altText: payload.name || "Image", isPrimary: i === 0 }));
 		fd.append("mediaMetadata", JSON.stringify(meta));
 		payload.files.forEach((f) => fd.append("files", f));
-	}
-	for(let [k,v] of fd){
-		console.log(k,v)
 	}
 	return fd;
 }

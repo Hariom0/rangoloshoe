@@ -49,6 +49,7 @@ export default function AdminGrid({ category, gender, page }: Props) {
     const [formInitial, setFormInitial] = useState<Product | null>(null);
     const [bestSellers, setBestSellers] = useState<number>(0);
     const [freshDrops, setFreshDrop] = useState<number>(0);
+    const [totalProduct, setTotallProdcut] = useState<number>(0)
 
     // Data Fetching State
     const [products, setProducts] = useState<any>([]);
@@ -137,9 +138,10 @@ export default function AdminGrid({ category, gender, page }: Props) {
         async function fetchStocks() {
             try {
                 let res = await fetch("/api/stocks");
-                let { freshDrops: f, bestSellers: b } = await res.json();
+                let { freshDrops: f, bestSellers: b , total : t} = await res.json();
                 setFreshDrop(f);
                 setBestSellers(b);
+                setTotallProdcut(t)
             } catch (error) {
                 console.error("Failed to fetch product placement stats:", error);
             }
@@ -295,7 +297,7 @@ export default function AdminGrid({ category, gender, page }: Props) {
                 {/* Stats Dashboard Grid (Only show if we have data) */}
                 {products.length > 0 && !error && (
                     <div className="mb-6 grid grid-cols-3 gap-2">
-                        <StatCard icon={<Package className="h-3.5 w-3.5" />} label="Products" value={stats.total} />
+                        <StatCard icon={<Package className="h-3.5 w-3.5" />} label="Products" value={total} />
                         <StatCard icon={<Flame className="h-3.5 w-3.5" />} label="FreshDrops" value={freshDrops} />
                         <StatCard icon={<Star className="h-3.5 w-3.5" />} label="BestSeller" value={bestSellers} />
                     </div>
