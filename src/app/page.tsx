@@ -1,14 +1,15 @@
+export const dynamic = 'force-dynamic';
 import React from 'react';
 
 // Main Layout Components
-import { AnnouncementBar } from './components/AnnouncementBar';
-import { Navbar } from './components/Navbar';
-import { HeroSection } from './components/HeroSection';
-import { CollectionSection } from './components/CollectionsSection';
-import { FreshDropsSection } from './components/FreshDropsSection';
-import { BestSellersSection } from './components/BestsellersSection';
-import { InstagramSection } from './components/FollowUsSection';
-import { Footer } from './components/Footer';
+import { AnnouncementBar } from './components/landing/AnnouncementBar';
+import { Navbar } from './components/shared/Navbar';
+import { HeroSection } from './components/landing/HeroSection';
+import { CollectionSection } from './components/landing/CollectionsSection';
+import { FreshDropsSection } from './components/landing/FreshDropsSection';
+import { BestSellersSection } from './components/landing/BestsellersSection';
+import { InstagramSection } from './components/landing/FollowUsSection';
+import { Footer } from './components/shared/Footer';
 
 /**
  * Rangoli Shoes Landing Page

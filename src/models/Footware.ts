@@ -34,6 +34,8 @@ const productSchema = new mongoose.Schema(
 
 		// Allows the admin to hide products without deleting them
 		isActive: { type: Boolean, default: true },
+		is_bestseller: { type: Boolean, default: false },
+		is_fresh_drop : { type: Boolean, default: false },
 	},
 	{ timestamps: true },
 );
