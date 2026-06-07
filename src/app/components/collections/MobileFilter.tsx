@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 
 
-function MobileFilter({filtersOpen , setFiltersOpen , genders , sizes}) {
+function MobileFilter({filtersOpen , setFiltersOpen , genders , sizes}:any) {
 	return (
 		<div className={`fixed inset-0 z-[80] bg-black/40 transition-all duration-300 lg:hidden ${filtersOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}>
 			<div
@@ -23,7 +23,7 @@ function MobileFilter({filtersOpen , setFiltersOpen , genders , sizes}) {
 						<h3 className="mb-5 text-sm font-bold uppercase tracking-wider">Gender</h3>
 
 						<div className="flex flex-wrap gap-3">
-							{genders.map((gender) => (
+							{genders.map((gender:any) => (
 								<button key={gender.id} className={`rounded-full px-5 py-3 text-sm font-medium ${gender.active ? "bg-primary-container " : "border border-outline-variant/30"}`}>
 									{gender.label}
 								</button>
@@ -35,7 +35,7 @@ function MobileFilter({filtersOpen , setFiltersOpen , genders , sizes}) {
 						<h3 className="mb-5 text-sm font-bold uppercase tracking-wider">Size</h3>
 
 						<div className="grid grid-cols-4 gap-3">
-							{sizes.map((size) => (
+							{sizes.map((size:any) => (
 								<button key={size.id} className={`aspect-square rounded-2xl ${size.active ? "border border-primary bg-primary/5 font-bold" : "border border-outline-variant/30"}`}>
 									{size.value}
 								</button>

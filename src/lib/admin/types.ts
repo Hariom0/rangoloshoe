@@ -23,9 +23,13 @@ export interface Product {
   discountPrice?: number;
   variants?: Variant[];
   media?: ProductMedia[];
+  isActive?: boolean | string;
   images?: ProductMedia[];
   createdAt?: string;
   updatedAt?: string;
+  is_fresh_drop?:boolean | string;
+  is_bestseller?:boolean | string;
+  list?:any
 }
 
 export const GENDERS = ["Men", "Women", "Unisex", "Kids"] as const;

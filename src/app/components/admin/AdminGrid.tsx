@@ -51,7 +51,7 @@ export default function AdminGrid({ category, gender, page }: Props) {
     const [freshDrops, setFreshDrop] = useState<number>(0);
 
     // Data Fetching State
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<any>([]);
     const [isLoading, setIsLoading] = useState(false); // Initial load
     const [isFetching, setIsFetching] = useState(false); // Background refresh
     const [error, setError] = useState<Error | null>(null);
@@ -118,15 +118,15 @@ export default function AdminGrid({ category, gender, page }: Props) {
     const filtered = useMemo(() => {
         if (!debounced) return products;
         const q = debounced.toLowerCase();
-        return products.filter((p) => p.name?.toLowerCase().includes(q) || p.slug?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q));
+        return products.filter((p:any) => p.name?.toLowerCase().includes(q) || p.slug?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q));
     }, [products, debounced]);
 
-    const existingSlugs = useMemo(() => products.map((p) => p.slug), [products]);
+    const existingSlugs = useMemo(() => products.map((p:any) => p.slug), [products]);
 
     const stats = useMemo(() => {
-        const totalUnits = products.reduce((s, p) => s + totalStock(p), 0);
-        const outOfStock = products.filter((p) => totalStock(p) === 0).length;
-        const lowStock = products.filter((p) => {
+        const totalUnits = products.reduce((s:any, p:any) => s + totalStock(p), 0);
+        const outOfStock = products.filter((p:any) => totalStock(p) === 0).length;
+        const lowStock = products.filter((p:any) => {
             const s = totalStock(p);
             return s > 0 && s < 10;
         }).length;
@@ -352,7 +352,7 @@ export default function AdminGrid({ category, gender, page }: Props) {
                 ) : (
                     // 4. Data State (Product Grid)
                     <div className="grid grid-cols-2 gap-3">
-                        {filtered.map((p) => (
+                        {filtered.map((p:any) => (
                             <ProductCard
                                 key={p.slug || p._id}
                                 product={p}

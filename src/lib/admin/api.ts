@@ -37,20 +37,21 @@ async function handle<T>(res: Response): Promise<T> {
 export interface ProductFilters {
 	search?: string;
 	gender?: string;
+	page?:number | string;
 	category?: string;
 }
 
-export async function fetchProducts(filters: ProductFilters = {}): Promise<Product[]> {
+export async function fetchProducts(filters: ProductFilters = {}): Promise<any> {
 	const url = buildUrl("/api/products", {
 		gender: filters.gender,
 		category: filters.category,
 	});
 	const res = await fetch(url);
 	const data = await handle<any>(res);
-	const list: Product[] = Array.isArray(data) ? data : data.products || data.data || [];
+	const list: any = Array.isArray(data) ? data : data.products || data.data || [];
 	if (filters.search) {
 		const q = filters.search.toLowerCase();
-		return list.filter((p) => p.name?.toLowerCase().includes(q) || p.slug?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q));
+		return list.filter((p:any) => p.name?.toLowerCase().includes(q) || p.slug?.toLowerCase().includes(q) || p.category?.toLowerCase().includes(q));
 	}
 	return {list,"total":data?.total};
 }
@@ -95,7 +96,7 @@ function buildFormData(payload: Partial<ProductFormPayload>) {
 	return fd;
 }
 
-export async function createProduct(payload: ProductFormPayload): Promise<Product> {
+export async function createProduct(payload: any): Promise<any> {
 	const res = await fetch(buildUrl("/api/products"), {
 		method: "POST",
 		body: payload

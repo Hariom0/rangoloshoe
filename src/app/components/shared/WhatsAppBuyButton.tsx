@@ -12,11 +12,7 @@ export interface CartItemWithDetails {
     discountPrice?: number;
 }
 
-// 1. Extend React.ButtonHTMLAttributes so the component accepts disabled, className, etc.
-interface WhatsAppButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    items: CartItemWithDetails[];
-    totalPrice: number;
-}
+
 
 export default function WhatsAppBuyButton({ 
     items, 
@@ -24,7 +20,7 @@ export default function WhatsAppBuyButton({
     className, // Destructure className to combine or override
     disabled,  // Destructure disabled state
     ...props   // Gather any other standard button props passed down
-}: WhatsAppButtonProps) {
+}: any) {
     const WHATSAPP_NUMBER = "7050001102";
     
     const handleWhatsAppCheckout = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -35,7 +31,7 @@ export default function WhatsAppBuyButton({
         message += `Hello! I would like to purchase the following items from my cart:\n\n`;
         message += `================================\n`;
 
-        items.forEach((item, index) => {
+        items.forEach((item:any, index:number) => {
             const activePrice = item.discountPrice || item.price;
             const itemSubtotal = activePrice * (item.quantity || 1);
 

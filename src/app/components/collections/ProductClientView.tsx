@@ -25,7 +25,7 @@ export interface Product {
 	_id: string;
 	name: string;
 	slug: string;
-	description: string;
+	description?: string | undefined;
 	gender: string;
 	category: string;
 	price: number;
@@ -39,7 +39,11 @@ export interface Product {
 	updatedAt: string;
 }
 
-export default function ProductClientView({ product }: { product: Product }) {
+interface ProductClientViewProps {
+	product: Product;
+}
+
+export default function ProductClientView({ product }: ProductClientViewProps) {
 	const primaryMedia = product.images.find((img) => img.isPrimary) || product.images[0];
 	const [activeMedia, setActiveMedia] = useState<Media>(primaryMedia);
 	const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
@@ -110,7 +114,7 @@ export default function ProductClientView({ product }: { product: Product }) {
 	};
 
 	const isVideo = (media: Media) => {
-		return media.type === "video" || media.url.match(/\.(mp4|webm|ogg)$/i);
+		return !!(media.type === "video" || media.url.match(/\.(mp4|webm|ogg)$/i));
 	};
 
 	const hasDiscount = !!(product.discountPrice && Number(product.discountPrice) < Number(product.price));

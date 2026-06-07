@@ -80,7 +80,7 @@ export const FreshDropsSection = () => {
 						const originalPrice = hasDiscount ? product.price : null;
 
 						// Calculate discount percentage dynamically if it exists
-						const discountPercentage = hasDiscount ? Math.round(((product.price - product.discountPrice) / product.price) * 100) : null;
+						const discountPercentage = hasDiscount ? Math.round(((product.price - product.discountPrice!) / product.price) * 100) : null;
 
 						return (
 							<div key={product._id} className="min-w-[260px]">
@@ -123,7 +123,7 @@ export const FreshDropsSection = () => {
 					const hasDiscount = !!product.discountPrice;
 					const currentPrice = hasDiscount ? product.discountPrice : product.price;
 					const originalPrice = hasDiscount ? product.price : null;
-					const discountPercentage = hasDiscount ? Math.round(((product.price - product.discountPrice) / product.price) * 100) : null;
+					const discountPercentage = hasDiscount ? Math.round(((product.price - product.discountPrice!) / product.price) * 100) : null;
 
 					return (
 						<Link key={product._id} href={`/collections/${product.slug}`} className="group">

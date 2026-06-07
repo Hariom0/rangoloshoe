@@ -1,8 +1,12 @@
 import { SessionProvider } from "next-auth/react";
 import React from "react";
 
-function adminLayout({ children }: { children: React.ReactElement }) {
-	return <SessionProvider>{children}</SessionProvider>;
+interface AdminLayoutProps {
+    children: React.ReactNode;
 }
 
-export default adminLayout;
+function AdminLayout({ children }: AdminLayoutProps) {
+    return <SessionProvider>{children}</SessionProvider>;
+}
+
+export default AdminLayout;

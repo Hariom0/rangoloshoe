@@ -30,7 +30,7 @@ type Props = {
 	initialCategory: string[];
 	genders: string[];
 	category: string;
-	gender: string;
+	gender?: string;
 	page: string;
 	total: number;
 };

@@ -31,7 +31,7 @@ type ProductType = {
 };
 
 type Props = {
-    products: ProductType[];
+    products: any
 };
 
 /* =========================
@@ -77,8 +77,8 @@ function Product({ products }: Props) {
 
     return (
         <div className="grid grid-cols-2 gap-x-3 gap-y-7 sm:gap-4 md:grid-cols-3 md:gap-6 xl:grid-cols-3 2xl:grid-cols-4">
-            {products.map((product) => {
-                const primaryImage = product.images.find((img) => img.isPrimary) || product.images[0];
+            {products.map((product:any) => {
+                const primaryImage = product.images.find((img:any) => img.isPrimary) || product.images[0];
                 const isLiked = wishlist.includes(product.slug);
 
                 return (
@@ -144,7 +144,7 @@ function Product({ products }: Props) {
 
                             {/* SIZES */}
                             <div className="mt-4 flex flex-wrap gap-1.5">
-                                {product.variants.slice(0, 4).map((variant) => (
+                                {product.variants.slice(0, 4).map((variant:any) => (
                                     <span 
                                         key={variant._id} 
                                         className="rounded-lg bg-neutral-50 border border-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-600"

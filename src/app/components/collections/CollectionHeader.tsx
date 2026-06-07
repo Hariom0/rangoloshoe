@@ -1,7 +1,7 @@
 import { ArrowLeft, ChevronDown, Filter } from "lucide-react";
 
 
-export default function CollectionHeader({setFiltersOpen}) {
+export default function CollectionHeader({setFiltersOpen}:any) {
 	return (
 		<>
 			{" "}

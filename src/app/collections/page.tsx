@@ -9,13 +9,13 @@ type Props = {
 	searchParams: {
 		category?: string;
 		page?: string;
-		gender?: string;
+		genders?: string;
+		gender?:string;
 	};
 };
 
 async function getProducts(category: string, page: string, gender: string) {
-	let base = process.env.NEXT_PUBLIC_BASE_URL;
-	const res = await fetch(`${base}/api/products?page=${page}&category=${category}&gender=${gender}`, {
+	const res = await fetch(`/api/products?page=${page}&category=${category}&gender=${gender}`, {
 		cache: "no-store",
 	});
 

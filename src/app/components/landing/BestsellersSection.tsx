@@ -45,8 +45,8 @@ export const BestSellersSection = () => {
 
 				{/* Mobile First Product Grid */}
 				<div className="grid md:hidden grid-cols-2 gap-x-3 gap-y-7 sm:gap-x-4 md:grid-cols-3 md:gap-x-6 md:gap-y-10 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-14">
-					{products.map((product) => {
-						const primaryImage = product.images?.find((img) => img.isPrimary)?.url || product.images?.[0]?.url;
+					{products.map((product : any) => {
+						const primaryImage = product.images?.find((img : any) => img.isPrimary)?.url || product.images?.[0]?.url;
 						const hasDiscount = !!product.discountPrice;
 						const currentPrice = hasDiscount ? product.discountPrice : product.price;
 						const originalPrice = hasDiscount ? product.price : null;
@@ -81,8 +81,8 @@ export const BestSellersSection = () => {
 
 				{/* Desktop Grid */}
 				<div className="hidden grid-cols-2 gap-x-8 gap-y-14 md:grid lg:grid-cols-4">
-					{products.map((product) => {
-						const primaryImage = product.images?.find((img) => img.isPrimary)?.url || product.images?.[0]?.url;
+					{products.map((product : any) => {
+						const primaryImage = product.images?.find((img : any) => img.isPrimary)?.url || product.images?.[0]?.url;
 						const hasDiscount = !!product.discountPrice;
 						const currentPrice = hasDiscount ? product.discountPrice : product.price;
 						const originalPrice = hasDiscount ? product.price : null;

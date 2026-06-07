@@ -71,8 +71,8 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
   );
   
   // MODIFICATION: Initialize state hooks for boolean values
-  const [isFreshDrop, setIsFreshDrop] = useState<boolean>(initial?.is_fresh_drop || false);
-  const [isBestseller, setIsBestseller] = useState<boolean>(initial?.is_bestseller || false);
+  const [isFreshDrop, setIsFreshDrop] = useState<any>(initial?.is_fresh_drop || false);
+  const [isBestseller, setIsBestseller] = useState<any>(initial?.is_bestseller || false);
 
   const [variants, setVariants] = useState<Variant[]>(
     initial?.variants?.length ? initial.variants : [{ size: 9, stock: 1, sku: "" }],
