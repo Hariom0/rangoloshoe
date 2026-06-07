@@ -48,7 +48,8 @@ type Props = {
 // --- DATA FETCHING ---
 async function getProduct(slug: string): Promise<Product | null> {
 	try {
-		const res = await fetch(`/api/products/${slug}`, {
+		let base = process.env.NEXT_PUBLIC_BASE_URL;
+		const res = await fetch(`${base}/api/products/${slug}`, {
 			cache: "no-store",
 		});
 
