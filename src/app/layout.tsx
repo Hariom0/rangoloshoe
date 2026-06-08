@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Plus_Jakarta_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -91,6 +92,7 @@ export default function RootLayout({
 		<html lang="en" className={`${newsreader.variable} ${plusJakarta.variable} h-full`}>
 			<link rel="icon" type="image/x-icon" href="/images/short_icon.png"></link>
 			<body className="min-h-full flex flex-col antialiased">{children}</body>
+			<Analytics />
 		</html>
 	);
 }
