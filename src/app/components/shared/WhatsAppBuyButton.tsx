@@ -21,7 +21,7 @@ export default function WhatsAppBuyButton({
     disabled,  // Destructure disabled state
     ...props   // Gather any other standard button props passed down
 }: any) {
-    const WHATSAPP_NUMBER = "7050001102";
+    const WHATSAPP_NUMBER = "9934745626";
     
     const handleWhatsAppCheckout = (e: React.MouseEvent<HTMLButtonElement>) => {
         // Prevent click if disabled or empty

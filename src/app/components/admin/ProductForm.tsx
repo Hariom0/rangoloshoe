@@ -538,7 +538,7 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
                 <button
                   type="button"
                   onClick={() => removeMediaItem(i)}
-                  className="absolute right-2 top-2 rounded-full bg-black/50 p-1.5 text-white backdrop-blur hover:bg-destructive transition-colors"
+                  className="absolute right-2 top-5 rounded-full bg-black/50 p-1.5 text-white backdrop-blur hover:bg-destructive transition-colors"
                 >
                   <X className="h-3.5 w-3.5" />
                 </button>
