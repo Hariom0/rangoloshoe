@@ -296,7 +296,7 @@ export default function CartPage() {
 					<WhatsAppBuyButton
 						className="h-14 w-full rounded-xl font-bold bg-[#25D366] text-white hover:bg-[#20ba5a] active:scale-[0.98] shadow-sm"
 						items={processedCartItems}
-						totalPrice={grandTotalPrice}
+						totalprice={grandTotalPrice}
 					/>
 				</aside>
 			</div>

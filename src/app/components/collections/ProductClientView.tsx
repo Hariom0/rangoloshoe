@@ -305,7 +305,7 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 							<WhatsAppBuyButton
 								disabled={!selectedVariant || cartStatus === "loading"}
 								items={[{ name: product.name, slug: product.slug, size: selectedSize, price: product.discountPrice }]}
-								totalPrice={product.price}
+								totalprice={product.price}
 								className="h-14 w-full rounded-xl font-bold bg-[#25D366] text-white hover:bg-[#20ba5a] active:scale-[0.98] shadow-sm"
 							/>
 

@@ -10,6 +10,7 @@ import { FreshDropsSection } from './components/landing/FreshDropsSection';
 import { BestSellersSection } from './components/landing/BestsellersSection';
 import { InstagramSection } from './components/landing/FollowUsSection';
 import { Footer } from './components/shared/Footer';
+import { HeroCarouselSection } from './components/landing/HeroCarouselSection';
 
 /**
  * Rangoli Shoes Landing Page
@@ -30,10 +31,10 @@ const LandingPage: React.FC = () => {
       <main className="grow pt-22 md:pt-26">
         
         {/* 1. Hero: Brand identity and primary CTA */}
-        <HeroSection />
+        {/* <HeroSection /> */}
+        <HeroCarouselSection />
 
         {/* 2. Collections: Strategic category entry points */}
-        <CollectionSection />
 
         {/* 3. Fresh Drops: Dynamic section with API integration */}
         <section id="new-arrivals">
@@ -44,6 +45,7 @@ const LandingPage: React.FC = () => {
         <section id="bestsellers">
           <BestSellersSection />
         </section>
+        <CollectionSection />
 
         {/* 6. Social Feed: Engagement and brand trust */}
         <InstagramSection />
