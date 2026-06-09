@@ -113,7 +113,7 @@ export const HeroCarouselSection = () => {
                             ) : (
                                 <div className="relative w-full h-full">
                                     {/* Abstract High-Contrast Angular Split Overlay (Matches Shopify Banner reference asset) */}
-                                    <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/40 via-rose-500/30 to-black/10 z-10 mix-blend-multiply" />
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-white-500/40 via-gray-500/30 to-black/10 z-10 mix-blend-multiply" />
                                     <img 
                                         className="w-full h-full object-cover object-center pointer-events-none"
                                         src={slide.src}
@@ -140,7 +140,7 @@ export const HeroCarouselSection = () => {
                                 <div className="space-y-1">
                                     <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-none italic font-headline">
                                         {slide.titleFirstLine} <br />
-                                        <span className="text-primary bg-gradient-to-r from-orange-400 to-rose-400 bg-clip-text text-transparent">
+                                        <span className="text-primary bg-gradient-to-r from-orange-400/80 to-rose-400/80 bg-clip-text text-transparent">
                                             {slide.titleSecondLine}
                                         </span>
                                     </h2>

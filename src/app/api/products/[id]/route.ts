@@ -112,7 +112,6 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
             // Assign the entirely reconstructed array back to the product
             updateFields.images = newImagesArray;
         }
-        // console.log(updateFields, formData);
         
         // 4. Save to Database
         const updatedProduct = await Footware.findOneAndUpdate({ slug: id }, updateFields, { new: true, runValidators: true });

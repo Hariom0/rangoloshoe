@@ -9,7 +9,7 @@ interface MobileHeaderProps {
 export default function MobileBackButton({ title , href = "/" }: MobileHeaderProps) {
     return (
         /* md:hidden ensures this native-app style header only shows on mobile/tablets */
-        <header className="sticky top-0 z-50 flex h-14 items-center bg-background/90 backdrop-blur-md px-4 border-b border-border md:hidden shadow-sm">
+        <header className="sticky top-0 z-20 flex h-14 items-center bg-background/90 backdrop-blur-md px-4 border-b border-border md:hidden shadow-sm">
             <div className="flex items-center gap-1">
                 <Link
                     href={href}

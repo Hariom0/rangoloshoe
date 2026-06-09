@@ -14,10 +14,10 @@ const NAV_ITEMS = [
 
 // Collections data for Dropdowns
 const collections = [
-	{ name: "Sneakers", path: "/collections/sneakers" },
-	{ name: "Crocs", path: "/collections/crocs" },
-	{ name: "Slides", path: "/collections/slides" },
-	{ name: "Sports", path: "/collections/sports" },
+	{ name: "Sneakers", path: "/collections?category=Sneakers" },
+	{ name: "Crocs", path: "/collections?category=Crocs" },
+	{ name: "Slides", path: "/collections?category=Slides" },
+	{ name: "Sports", path: "/collections?category=Sports" },
 ];
 export function WhatsAppIcon({ className }: { className?: string }) {
 	return (

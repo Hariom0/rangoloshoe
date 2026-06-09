@@ -45,6 +45,7 @@ const LandingPage: React.FC = () => {
         <section id="bestsellers">
           <BestSellersSection />
         </section>
+        
         <CollectionSection />
 
         {/* 6. Social Feed: Engagement and brand trust */}

@@ -20,14 +20,13 @@ type BestsellerProduct = {
 async function getBestsellers(): Promise<BestsellerProduct[]> {
     try {
         const base = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-        
         // Fetch data directly on the server with automatic revalidation intervals if desired
         const res = await fetch(`${base}/api/products?best-seller=true`, {
-            next: { revalidate: 3600 }, // Caches for 1 hour to boost performance, change to { cache: 'no-store' } if live accuracy is required
+            cache: "no-store" , // Caches for 1 hour to boost performance, change to { cache: 'no-store' } if live accuracy is required
         });
-
+        
         if (!res.ok) return [];
-
+        
         const data = await res.json();
         return data.products || []; // Destructure products collection fallback
     } catch (error) {
@@ -39,7 +38,6 @@ async function getBestsellers(): Promise<BestsellerProduct[]> {
 export const BestSellersSection = async () => {
     // Await database/API collection payload directly during layout compilation
     const products = await getBestsellers();
-
     if (!products || products.length === 0) return null;
 
     return (

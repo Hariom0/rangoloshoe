@@ -39,7 +39,7 @@ async function getFreshDrops(): Promise<Product[]> {
         const base = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
         
         const res = await fetch(`${base}/api/products?fresh-drop=true`, {
-            next: { revalidate: 3600 }, // Performance server-side caching layer config
+            cache: "no-store" // Performance server-side caching layer config
         });
 
         if (!res.ok) return [];

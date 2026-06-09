@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
 	// FIX: Explicitly check for the string "true"
 	const freshDrop = searchParams.get("fresh-drop") === "true";
 	const bestSeller = searchParams.get("best-seller") === "true";
-
+	
 	// Dynamic query building
 	const filter: Record<string, any> = {};
 	if (category !== "ALL") filter.category = category;
