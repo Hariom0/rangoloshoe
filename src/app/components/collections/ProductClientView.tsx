@@ -330,7 +330,7 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 								Shipping & Returns
 								<ChevronDown className="w-5 h-5 group-open:rotate-180 transition-transform" />
 							</summary>
-							<div className="mt-4 text-sm text-gray-600">Free shipping on all orders above ₹500. 15-day hassle-free return policy.</div>
+							<div className="mt-4 text-sm text-gray-600">Free shipping on all orders above ₹1499. 7-day hassle-free return policy.</div>
 						</details>
 						<details className="group py-4">
 							<summary className="list-none flex justify-between items-center cursor-pointer font-bold uppercase tracking-widest text-sm text-gray-900">

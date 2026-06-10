@@ -35,7 +35,7 @@ const FEATURES = [
 const STORE_INFO = {
 	address: "Canara bank, Gali Station Rd, Sasamusa, Bihar 841505",
 	phone: "+91 9934745626",
-	email: "hello@rangolishoes.com",
+	email: "Personalmailxy@gmail.com",
 	hours: "Mon - Sat: 10:00 AM - 9:00 PM | Sun: 11:00 AM - 7:00 PM",
 	// Replace this with your actual Google Maps embed URL
 	mapUrl:

@@ -80,7 +80,7 @@ export const Footer = () => {
 								<MessageCircle size={18} />
 							</Link>
 							<Link
-								href="mailto:hello@rangolishoes.com?subject=Website%20Inquiry"
+								href="mailto:Personalmailxy@gmail.com?subject=Website%20Inquiry"
 								aria-label="Email"
 								className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 transition-all duration-300 hover:bg-primary hover:text-white active:scale-95"
 							>
@@ -164,7 +164,7 @@ export const Footer = () => {
 						</Link>
 
 						{/* Email Link */}
-						<Link href="mailto:hello@rangolishoes.com?subject=Website%20Inquiry" className="flex items-center gap-1.5 text-xs text-white/60 transition-colors duration-200 hover:text-primary">
+						<Link href="mailto:Personalmailxy@gmail.com?subject=Website%20Inquiry" className="flex items-center gap-1.5 text-xs text-white/60 transition-colors duration-200 hover:text-primary">
 							<Mail size={15} />
 							Email Us
 						</Link>

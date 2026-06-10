@@ -95,7 +95,7 @@ export default function WhatsAppBuyButton({ items = [], className = "", disabled
 
 		// Free shipping condition over ₹1499 total order threshold
 		const isFreeShipping = subtotal >= 1499;
-		const baseShippingFee = paymentMethod === "cod" ? 89 : 149;
+		const baseShippingFee = paymentMethod === "cod" ? 149 : 89;
 		const shippingFee = isFreeShipping ? 0 : baseShippingFee;
 		const grandTotal = subtotal + shippingFee;
 
@@ -507,7 +507,7 @@ export default function WhatsAppBuyButton({ items = [], className = "", disabled
 													{paymentMethod === "cod" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
 												</div>
 											</div>
-											<p className="text-[10px] text-neutral-500 mt-2">Pay with cash upon delivery package handoff. Fee: ₹89</p>
+											<p className="text-[10px] text-neutral-500 mt-2">Pay with cash upon delivery package handoff. Fee: ₹149</p>
 										</div>
 
 										{/* Prepaid Selector */}
@@ -521,7 +521,7 @@ export default function WhatsAppBuyButton({ items = [], className = "", disabled
 													{paymentMethod === "prepaid" && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
 												</div>
 											</div>
-											<p className="text-[10px] text-neutral-500 mt-2">Instant UPI payment validation processing. Fee: ₹149</p>
+											<p className="text-[10px] text-neutral-500 mt-2">Instant UPI payment validation processing. Fee: ₹89</p>
 										</div>
 									</div>
 								</div>
