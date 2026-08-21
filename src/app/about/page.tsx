@@ -6,42 +6,41 @@ import MobileBackButton from "../components/shared/MoibileBackButton";
 ========================= */
 
 const FEATURES = [
-	{
-		id: 1,
-		title: "Wide Collection",
-		description: "From traditional elegance to modern athletic wear, we house styles for every occasion.",
-		icon: Grid2X2,
-	},
-	{
-		id: 2,
-		title: "Honest Pricing",
-		description: "We ensure fair pricing across all our premium handcrafted selections.",
-		icon: Tag,
-	},
-	{
-		id: 3,
-		title: "Trusted Quality",
-		description: "Every pair is carefully checked for durability and craftsmanship.",
-		icon: BadgeCheck,
-	},
-	{
-		id: 4,
-		title: "Personal Service",
-		description: "Expert fitting advice and personalized style recommendations.",
-		icon: Sparkles,
-	},
+    {
+        id: 1,
+        title: "Curated Collection",
+        description: "From modern street style to classic formalwear, find the perfect look for every occasion.",
+        icon: Grid2X2,
+    },
+    {
+        id: 2,
+        title: "Transparent Pricing",
+        description: "Premium fabrics and trending styles at straightforward, honest prices.",
+        icon: Tag,
+    },
+    {
+        id: 3,
+        title: "Guaranteed Quality",
+        description: "Every piece is inspected for superior stitching, fit, and long-lasting fabric durability.",
+        icon: BadgeCheck,
+    },
+    {
+        id: 4,
+        title: "Personalized Fitting",
+        description: "Get expert style advice and tailored sizing help to ensure you look your absolute best.",
+        icon: Sparkles,
+    },
 ];
 
 const STORE_INFO = {
-	address: "Canara bank, Gali Station Rd, Sasamusa, Bihar 841505",
-	phone: "+91 9934745626",
+	address: "Haji Market, Main Road, Sasamusa, Sirisiya, Bihar 841505",
+	phone: "",
 	email: "Personalmailxy@gmail.com",
 	hours: "Mon - Sat: 10:00 AM - 9:00 PM | Sun: 11:00 AM - 7:00 PM",
 	// Replace this with your actual Google Maps embed URL
 	mapUrl:
-		"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114136.97362322854!2d84.21345796837922!3d26.623484029211014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39930f34684c16d7%3A0x21134949e4302a0!2sRangoli%20shoe%20centre!5e0!3m2!1sen!2sin!4v1780811997529!5m2!1sen!2sin",
-};
-
+		"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3569.8714951447696!2d84.35909697530221!3d26.524257076676587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39930f36e4c6c933%3A0x550772122a2355f6!2sTop%20In%20Town%20Young%20Fashaion!5e0!3m2!1sen!2sin!4v1787300625568!5m2!1sen!2sin"
+}; 
 /* =========================
    COMPONENT
 ========================= */
@@ -137,7 +136,7 @@ export default function AboutPage() {
 							{/* CTA Buttons */}
 							<div className="mt-10 flex flex-col gap-3 sm:flex-row">
 								<Link
-									href="https://maps.app.goo.gl/pXwDPsLKFAPbC6f37" // Update to your real maps link
+									href="https://maps.app.goo.gl/E2nuapapxMFvkr1V7" // Update to your real maps link
 									target="_blank"
 									className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-primary/20 transition-all hover:bg-primary/90 active:scale-95"
 								>

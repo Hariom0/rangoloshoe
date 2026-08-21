@@ -14,8 +14,8 @@ const NAV_ITEMS = [
 
 // Collections data for Dropdowns
 const collections = [
-	{ name: "Tshirts", path: "/collections?category=Tshirts" },
-	{ name: "Shirts", path: "/collections?category=Shirts" },
+	{ name: "Tshirt", path: "/collections?category=Tshirt" },
+	{ name: "Shirt", path: "/collections?category=Shirt" },
 	{ name: "Jeans", path: "/collections?category=Jeans" },
 	{ name: "Trousers", path: "/collections?category=Trousers" },
 ];

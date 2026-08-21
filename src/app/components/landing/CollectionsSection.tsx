@@ -12,28 +12,28 @@ type Collection = {
 const COLLECTIONS: Collection[] = [
   {
     id: 1,
-    title: "TShirts",
+    title: "TShirt",
     styles: "24 Styles",
-    image: "/images/tshirt1.jpg",
+    image: "/images/ts.png",
   },
   {
     id: 2,
-    title: "Shirts",
+    title: "Shirt",
     styles: "18 Styles",
-    image: "/images/shirt.jpg",
+    image: "/images/shirt1.png",
     offset: true,
   },
   {
     id: 3,
     title: "Jeans",
     styles: "12 Styles",
-    image: "/images/jeans.jpg",
+    image: "/images/j3.jpg",
   },
   {
     id: 4,
     title: "Trousers",
     styles: "20 Styles",
-    image: "/images/trouser.jpg",
+    image: "/images/t4.png",
   },
 ];
 
@@ -59,8 +59,8 @@ export const CollectionSection = () => {
 
           {/* Description */}
           <p className="mt-3 max-w-lg text-sm leading-relaxed text-on-surface-variant sm:text-base">
-            Explore our artisanal range of footwear designed for every
-            occasion, from the boardroom to the weekend escape.
+            Explore our versatile apparel range designed for every occasion, 
+            from the boardroom to the weekend escape..
           </p>
         </div>
 
@@ -90,14 +90,15 @@ export const CollectionSection = () => {
               />
 
               {/* Updated Overlay: Creates a smooth inner shadow from the bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
               {/* Content */}
               <div className="absolute bottom-5 left-5 z-10">
-                <span className="block font-headline text-2xl text-white">
+                <span className="block font-headline text-2xl text-white drop-shadow-sm">
                   {collection.title}
                 </span>
-                <span className="mt-1 block font-label text-[10px] uppercase tracking-[0.15em] text-white/70">
+                <span className="mt-1 block font-label text-[10px] uppercase tracking-[0.15em] text-white/80">
                   {collection.styles}
                 </span>
               </div>
@@ -125,15 +126,14 @@ export const CollectionSection = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-on-surface/10 via-on-surface/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none" />
 
             {/* Content */}
-            <div className="absolute bottom-6 left-6">
-              
-              <span className="block font-headline text-2xl text-white">
+            <div className="absolute bottom-6 left-6 z-10">
+              <span className="block font-headline text-2xl text-white drop-shadow-sm">
                 {collection.title}
               </span>
-              <span className="mt-1 block font-label text-[11px] uppercase tracking-[0.15em] text-white/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <span className="mt-1 block font-label text-[11px] uppercase tracking-[0.15em] text-white/80 transition-opacity duration-500 group-hover:opacity-100">
                 {collection.styles}
               </span>
             </div>

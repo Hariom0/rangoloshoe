@@ -11,7 +11,7 @@ type InstagramPost = {
 export const InstagramSection = () => {
 
   return (
-    <section className=" py-16 md:py-24 lg:py-32">
+    <section className="bg-gradient-to-b from-surface to-on-surface py-16 md:py-24 lg:py-24">
       
       {/* Header */}
       <div className="mx-auto mb-10 max-w-[1440px] px-4 text-center sm:px-6 md:mb-14 md:px-10">
@@ -29,15 +29,15 @@ export const InstagramSection = () => {
 
         {/* Heading */}
         <h2 className="font-headline text-3xl italic leading-tight  sm:text-4xl md:text-5xl">
-          #RangoliShoes
+          #YoungFashion
         </h2>
 
         {/* Description */}
-        <p className="mt-4 font-label text-sm -variant">
+        <p className="mt-4 font-label text-sm text-on-surface-variant">
           Follow our journey{" "}
           
           <span className="font-semibold text-primary">
-            <Link href={"https://www.instagram.com/rangoli_shoe_sasamusa/"}>@rangoli_shoe_sasamusa</Link>
+            <Link href={"https://www.instagram.com/youngfashion_1/"}>@youngfashion_1</Link>
           </span>
         </p>
       </div>

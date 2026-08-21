@@ -34,11 +34,11 @@ export interface Product {
 
 export const GENDERS = ["Men", "Women", "Unisex", "Kids"] as const;
 export const CATEGORIES = [
-  "Tshirts",
-  "Shirts",
+  "Tshirt",
+  "Shirt",
   "Jeans",
   "Trousers",
-  "Jackets",
+  "Jacket",
   "Ethnic",
  
 ] as const;

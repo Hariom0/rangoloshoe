@@ -63,7 +63,7 @@ export const Footer = () => {
 					{/* Brand Info */}
 					<div className="flex flex-col items-center text-center">
 						<Link href="/" className="font-headline text-2xl italic tracking-wide text-white">
-							Rangoli Shoes
+							Young Fashion
 						</Link>
 
 						<p className="mt-3 max-w-xs text-xs leading-relaxed text-white/60">Indian luxury footwear crafted with heritage and modern design.</p>
@@ -71,7 +71,7 @@ export const Footer = () => {
 						{/* Social / Action Icons */}
 						<div className="mt-6 flex items-center gap-4">
 							<Link
-								href="https://wa.me/919934745626?text=Hello%20Rangoli%20Shoes,%20I%20have%20a%20question..."
+								href="https://www.whatsapp.com/channel/0029VbDJxt67T8bZW7GeCn2f"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="WhatsApp"
@@ -124,10 +124,11 @@ export const Footer = () => {
 					{/* Brand Info */}
 					<div className="md:col-span-2">
 						<Link href="/" className="mb-6 block font-headline text-3xl italic tracking-wide text-white">
-							Rangoli Shoes
+							Young Fashion
 						</Link>
 
-						<p className="max-w-sm text-sm leading-relaxed text-white/60">Crafting Indian luxury footwear since 1984. We believe in the power of handmade heritage and modern design thinking.</p>
+						<p className="max-w-sm text-sm leading-relaxed text-white/60">Defining modern menswear with effortless style. 
+						We believe in the power of quality craftsmanship and contemporary design thinking.</p>
 					</div>
 
 					{/* Desktop Links */}
@@ -149,12 +150,12 @@ export const Footer = () => {
 
 				{/* Desktop Bottom Bar */}
 				<div className="hidden border-t border-white/10 py-8 md:mt-16 md:flex md:items-center md:justify-between">
-					<p className="text-xs text-white/40">© {new Date().getFullYear()} Rangoli Shoes. Crafted with Heritage.</p>
+					<p className="text-xs text-white/40">© {new Date().getFullYear()} Young Fashion. Redefining Everyday Men's Fashion</p>
 
 					<div className="flex items-center gap-6">
 						{/* WhatsApp Link */}
 						<Link
-							href="https://wa.me/919934745626?text=Hello%20Rangoli%20Shoes,%20I%20have%20a%20question..."
+							href="https://www.whatsapp.com/channel/0029VbDJxt67T8bZW7GeCn2f"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex items-center gap-1.5 text-xs text-white/60 transition-colors duration-200 hover:text-primary"
