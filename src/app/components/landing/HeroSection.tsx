@@ -20,7 +20,7 @@ export const HeroSection = () => {
 						Step Into <span className="italic text-primary">Style</span>
 						,
 						<br />
-						Step Into Rangoli
+						Step Into Yung Fashion
 					</h1>
 
 					{/* Description */}

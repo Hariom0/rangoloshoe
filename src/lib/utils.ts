@@ -46,7 +46,7 @@ interface LocalCartItem {
  * Adds a product variant configuration to the localStorage cart array.
  * Increments quantity if the exact item configuration (slug + size) exists.
  * * @param slug The unique product identifier string
- * @param size The selected footwear size (e.g., 9, 10, "UK 9")
+ * @param size The selected footwear size (e.g., 9, 10, " 9")
  * @param quantity Optional number of units to add (defaults to 1)
  * @returns boolean - true if successful, false otherwise
  */

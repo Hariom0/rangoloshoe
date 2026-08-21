@@ -26,7 +26,7 @@ const productSchema = new mongoose.Schema(
 		// CRITICAL for footwear: Stock must be tracked by size
 		variants: [
 			{
-				size: { type: Number, required: true }, // e.g., 8, 9, 10
+				size: { type: String, required: true }, // e.g., "XL", "L", "M"
 				stock: { type: Number, required: true, default: 0, min: 0 },
 				sku: { type: String }, // Stock Keeping Unit for inventory
 			},

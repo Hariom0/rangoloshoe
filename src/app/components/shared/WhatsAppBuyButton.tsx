@@ -154,7 +154,7 @@ export default function WhatsAppBuyButton({ items = [], className = "", disabled
 			return;
 		}
 
-		let message = `RANGOLI SHOES - NEW ORDER REQUEST\n`;
+		let message = `YOUNG FASHION - NEW ORDER REQUEST\n`;
 		message += `====================================\n\n`;
 
 		message += `ORDER SUMMARY\n`;
@@ -165,7 +165,7 @@ export default function WhatsAppBuyButton({ items = [], className = "", disabled
 			const quantity = item.quantity || 1;
 
 			message += `${index + 1}. ${item.name}\n`;
-			message += `   Size      : UK ${item.size}\n`;
+			message += `   Size      :  ${item.size}\n`;
 			message += `   Quantity  : ${quantity}\n`;
 			message += `   Unit Price: ₹${activePrice.toLocaleString("en-IN")}\n`;
 			message += `   Amount    : ₹${(activePrice * quantity).toLocaleString("en-IN")}\n`;

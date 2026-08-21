@@ -168,9 +168,8 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 								<button
 									key={media._id}
 									onClick={() => setActiveMedia(media)}
-									className={`relative aspect-square rounded-lg overflow-hidden transition-all ${
-										activeMedia._id === media._id ? "border-2 border-primary ring-2 ring-primary ring-offset-2 opacity-100" : "border-2 border-transparent opacity-60 hover:opacity-100"
-									}`}
+									className={`relative aspect-square rounded-lg overflow-hidden transition-all ${activeMedia._id === media._id ? "border-2 border-primary ring-2 ring-primary ring-offset-2 opacity-100" : "border-2 border-transparent opacity-60 hover:opacity-100"
+										}`}
 								>
 									{isVideo(media) ? (
 										<>
@@ -244,13 +243,12 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 											setSelectedVariant(variant);
 											setSelectedSize(variant.size);
 										}}
-										className={`h-12 rounded-lg flex items-center justify-center font-bold transition-all border ${
-											isOutOfStock
+										className={`h-12 rounded-lg flex items-center justify-center font-bold transition-all border ${isOutOfStock
 												? "opacity-30 cursor-not-allowed bg-gray-50 text-gray-400"
 												: isSelected
 													? "bg-primary text-white border-primary shadow-sm"
 													: "border-gray-200 hover:border-primary hover:text-primary text-gray-700"
-										}`}
+											}`}
 									>
 										{variant.size}
 									</button>
@@ -268,11 +266,10 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 								disabled={!selectedVariant || cartStatus === "loading"}
 								onClick={handleAddToCartAction}
 								className={`flex-[3] h-14 font-bold rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all duration-300 transform active:scale-[0.98] select-none
-                                    ${
-																			cartStatus === "success"
-																				? "bg-emerald-600 text-white scale-[1.01]"
-																				: "bg-primary text-white hover:bg-primary/90 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:active:scale-100 disabled:shadow-none"
-																		}`}
+                                    ${cartStatus === "success"
+										? "bg-emerald-600 text-white scale-[1.01]"
+										: "bg-primary text-white hover:bg-primary/90 disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:active:scale-100 disabled:shadow-none"
+									}`}
 							>
 								{cartStatus === "loading" && <Loader2 className="w-5 h-5 shrink-0 animate-spin text-white" />}
 								{cartStatus === "success" && <Check className="w-5 h-5 shrink-0 text-white animate-[bounce_0.5s_ease-in-out_1]" />}
@@ -293,9 +290,8 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 								type="button"
 								aria-label={isLiked ? "Remove from wishlist" : "Add to wishlist"}
 								onClick={(e) => handleWishlistClick(e, product.slug)}
-								className={`flex-1 h-14 border rounded-xl flex items-center justify-center active:scale-[0.98] transition-all duration-200 shadow-sm ${
-									isLiked ? "bg-red-50 border-red-200 text-red-500" : "bg-white border-gray-200 text-gray-600 hover:bg-red-50 hover:border-red-200 hover:text-red-500"
-								}`}
+								className={`flex-1 h-14 border rounded-xl flex items-center justify-center active:scale-[0.98] transition-all duration-200 shadow-sm ${isLiked ? "bg-red-50 border-red-200 text-red-500" : "bg-white border-gray-200 text-gray-600 hover:bg-red-50 hover:border-red-200 hover:text-red-500"
+									}`}
 							>
 								<Heart className={`w-5 h-5 transition-all duration-300 ${isLiked ? "fill-red-500 scale-110 drop-shadow-[0_0_8px_rgba(239,68,68,0.7)]" : ""}`} />
 							</button>
@@ -337,7 +333,8 @@ export default function ProductClientView({ product }: ProductClientViewProps) {
 								Product Care
 								<ChevronDown className="w-5 h-5 group-open:rotate-180 transition-transform" />
 							</summary>
-							<div className="mt-4 text-sm text-gray-600">Wipe clean with a damp cloth. Avoid direct sunlight. Use a soft brush for fabric sections.</div>
+							<div className="mt-4 text-sm text-gray-600">Wash gently with similar colors. Avoid bleach and high heat. Air dry when possible and iron on low heat.
+							</div>
 						</details>
 					</div>
 				</div>

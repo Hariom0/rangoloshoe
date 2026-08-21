@@ -12,10 +12,7 @@ import { InstagramSection } from './components/landing/FollowUsSection';
 import { Footer } from './components/shared/Footer';
 import { HeroCarouselSection } from './components/landing/HeroCarouselSection';
 
-/**
- * Rangoli Shoes Landing Page
- * Optimized for Mobile-First PWA usage.
- */
+
 const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col ">

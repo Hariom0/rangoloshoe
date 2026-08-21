@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Heart, X, ArrowLeft, Flame, Star, ShoppingCart, Check, Loader2 } from "lucide-react";
 import { addToCart } from "@/lib/utils";
+import Link from "next/link";
 
 // --- TYPES DEFINITION MATCHING THE API PAYLOAD ---
 export interface Media {
@@ -202,7 +203,8 @@ export default function WishlistPage() {
           const cartStatus = cartStatuses[product.slug] || "idle";
 
           return (
-            <div
+            <Link
+              href={`/collection/${product.slug}`}
               key={product._id}
               className="group relative flex gap-4 p-3.5 bg-white rounded-2xl border border-neutral-200/60 shadow-[0_2px_8px_-3px_rgba(0,0,0,0.05)] md:hover:shadow-[0_8px_20px_-6px_rgba(0,0,0,0.08)] md:hover:border-neutral-300 transition-all active:border-neutral-300"
             >
@@ -238,7 +240,7 @@ export default function WishlistPage() {
                 <div className="flex gap-1 overflow-x-auto py-1 no-scrollbar">
                   {product.variants.map((v, idx) => (
                     <span key={v._id || idx} className="text-[10px] font-medium px-1.5 py-0.5 bg-neutral-50 border border-neutral-100 rounded text-neutral-500 flex-shrink-0">
-                      UK {v.size}
+                     {v.size}
                     </span>
                   ))}
                 </div>
@@ -276,7 +278,7 @@ export default function WishlistPage() {
                   {cartStatus === "success" && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                 </button>
               </div>
-            </div>
+            </Link>
           );
         })}
       </main>

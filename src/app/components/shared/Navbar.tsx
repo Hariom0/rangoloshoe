@@ -249,7 +249,7 @@ export const Navbar = () => {
 
 						{/* Instagram */}
 						<Link
-							href="https://api.whatsapp.com/send/?phone=919934745626&text=Hello+Rangoli+Shoes&type=phone_number&app_absent=0/"
+							href="https://api.whatsapp.com/send/?phone=919934745626&text=Hello+Young+Fashion&type=phone_number&app_absent=0/"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Instagram"
@@ -260,7 +260,7 @@ export const Navbar = () => {
 
 						{/* Mail / Channel */}
 						<Link
-							href="https://Mail.com/rangolishoes"
+							href="https://Mail.com/youngfashion"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Daily Updates"
