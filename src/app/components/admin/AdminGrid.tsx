@@ -246,8 +246,8 @@ export default function AdminGrid({ category, gender, page }: Props) {
                                 <ShoppingBag className="h-5 w-5" />
                             </div>
                             <div>
-                                <h1 className="text-base font-bold leading-none">Rangoli Shoe</h1>
-                                <p className="text-[10px] text-muted-foreground">Admin · Footwear store</p>
+                                <h1 className="text-base font-bold leading-none">Young Fashion</h1>
+                                <p className="text-[10px] text-muted-foreground">Admin · Clothing store</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-1">

@@ -113,7 +113,7 @@ export const Footer = () => {
 
 					{/* Copyright */}
 					<div className="mt-10 border-t border-white/10 py-6 text-center">
-						<p className="text-[11px] uppercase tracking-wider text-white/40">© {new Date().getFullYear()} Rangoli Shoes</p>
+						<p className="text-[11px] uppercase tracking-wider text-white/40">© {new Date().getFullYear()} Young Fashion</p>
 					</div>
 				</div>
 

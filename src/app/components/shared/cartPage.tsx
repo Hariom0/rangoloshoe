@@ -112,7 +112,7 @@ export default function CartPage() {
 					price: match?.price ?? 0,
 					discountPrice: match?.discountPrice,
 					image: match?.images.find((img) => img.isPrimary)?.url ?? match?.images[0]?.url ?? "",
-					category: match?.category ?? "Shoes",
+					category: match?.category ?? "Uncategorized",
 					gender: match?.gender ?? "Unisex",
 				};
 			})

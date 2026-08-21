@@ -37,7 +37,7 @@ export default async function LoginPage({
       
       {/* Footer Branding Note */}
       <p className="mt-8 text-[11px] uppercase tracking-widest text-foreground/40">
-        © {new Date().getFullYear()} Rangoli Shoes Corporate
+        © {new Date().getFullYear()} Young Fashion Corporate
       </p>
     </main>
   );

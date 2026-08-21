@@ -20,20 +20,28 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
 	// 1. Core SEO Titles & Descriptions
-	title: "Rangoli Shoes | Premium Heritage Footwear",
-	description: "Discover Rangoli Shoes in Sasamusa. Premium handcrafted Indian heritage footwear, traditional leather shoes, and timeless artisan designs crafted since 1984.",
+	// 1. Core SEO Titles & Descriptions
+	title: "Young Fashion | Trendy & Premium Clothing",
+	description:
+		"Discover Young Fashion, your destination for trendy and premium clothing. Shop stylish t-shirts, shirts, jeans, dresses, and everyday fashion designed for modern looks and comfort.",
 
-	// 2. High-Value Keyword Targeting (Localized & Brand Specific)
+	// 2. High-Value Keyword Targeting (Brand & Clothing Specific)
 	keywords: [
-		"Rangoli Shoes",
-		"Sasamusa footwear store",
-		"best shoe shop in Sasamusa",
-		"premium Indian heritage footwear",
-		"handcrafted shoes Bihar",
-		"traditional Indian shoes Gopalganj",
-		"artisanal leather footwear",
-		"heritage shoes since 1984",
-		"buy premium mens shoes Sasamusa",
+		"Young Fashion",
+		"Young Fashion clothing",
+		"Young Fashion apparel",
+		"trendy clothing",
+		"premium clothing",
+		"fashion clothing store",
+		"stylish t-shirts",
+		"premium shirts",
+		"trendy jeans",
+		"men's clothing",
+		"women's clothing",
+		"casual wear",
+		"modern fashion",
+		"affordable fashion",
+		"online clothing store",
 	],
 
 	// 3. Metadata Canonical URLs (Prevents duplicate content tracking issues)

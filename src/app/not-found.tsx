@@ -52,7 +52,7 @@ export default function NotFound() {
 
       {/* Footer Identity Branding */}
       <p className="absolute bottom-6 font-body text-[10px] uppercase tracking-widest text-foreground/30">
-        Rangoli Shoes · Heritage in Every Step
+        Young Fashion | Trendy & Premium Clothing
       </p>
     </main>
   );

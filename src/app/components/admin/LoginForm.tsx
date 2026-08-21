@@ -31,7 +31,7 @@ export function LoginForm({ errorParam, loginAction }: LoginFormProps) {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="font-headline text-3xl italic text-foreground tracking-tight mb-2">
-          Rangoli Shoes
+          Young Fashion 
         </h1>
         <p className="font-body text-xs text-muted-foreground uppercase tracking-widest">
           Admin Portal

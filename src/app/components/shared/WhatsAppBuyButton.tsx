@@ -154,7 +154,7 @@ export default function WhatsAppBuyButton({ items = [], className = "", disabled
 			return;
 		}
 
-		let message = `RANGOLI SHOES - NEW ORDER REQUEST\n`;
+		let message = `YOUNG FASHION - NEW ORDER REQUEST\n`;
 		message += `====================================\n\n`;
 
 		message += `ORDER SUMMARY\n`;

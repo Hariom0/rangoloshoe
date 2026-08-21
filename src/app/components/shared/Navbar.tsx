@@ -238,7 +238,7 @@ export const Navbar = () => {
 					<div className="flex items-center gap-3">
 						{/* WhatsApp - Primary CTA */}
 						<Link
-							href="https://www.instagram.com/rangoli_shoe_sasamusa/"
+							href="https://www.instagram.com/youngfashion_1/"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]  font-semibold text-white shadow-lg transition-all hover:scale-[1.02] active:scale-95"
@@ -249,7 +249,7 @@ export const Navbar = () => {
 
 						{/* Instagram */}
 						<Link
-							href="https://api.whatsapp.com/send/?phone=919934745626&text=Hello+Rangoli+Shoes&type=phone_number&app_absent=0/"
+							href="https://api.whatsapp.com/send/?phone=919934745626&text=Hello+Young+Fashion&type=phone_number&app_absent=0/"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Instagram"
@@ -260,7 +260,7 @@ export const Navbar = () => {
 
 						{/* Mail / Channel */}
 						<Link
-							href="https://Mail.com/rangolishoes"
+							href="https://Mail.com/youngfashion"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="Daily Updates"
