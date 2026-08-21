@@ -64,18 +64,18 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
   const [slugDirty, setSlugDirty] = useState(!!initial);
   const [description, setDescription] = useState(initial?.description || "");
   const [gender, setGender] = useState(initial?.gender || "Unisex");
-  const [category, setCategory] = useState(initial?.category || "Sneakers");
+  const [category, setCategory] = useState(initial?.category || "Tshirt");
   const [price, setPrice] = useState<string>(initial?.price?.toString() || "");
   const [discountPrice, setDiscountPrice] = useState<string>(
     initial?.discountPrice?.toString() || "",
   );
-  
+  console.log("Initial product data:", initial); 
   // MODIFICATION: Initialize state hooks for boolean values
   const [isFreshDrop, setIsFreshDrop] = useState<any>(initial?.is_fresh_drop || false);
   const [isBestseller, setIsBestseller] = useState<any>(initial?.is_bestseller || false);
 
   const [variants, setVariants] = useState<Variant[]>(
-    initial?.variants?.length ? initial.variants : [{ size: 9, stock: 1, sku: "" }],
+    initial?.variants?.length ? initial.variants : [{ size: "XL", stock: 1, sku: "" }],
   );
 
   // Media State Management
@@ -125,8 +125,9 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
   }, [files]);
 
   function addVariant() {
-    const last = variants[variants.length - 1];
-    const nextSize = last ? Number(last.size) + 1 : 9;
+    const last : any = variants[variants.length - 1];
+    let sizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
+    const nextSize = last ? sizes[(sizes.indexOf(last.size) + 1) % sizes.length] : sizes[0];
     const prefix = name
       .split(/\s+/)
       .map((w) => w[0])
@@ -434,7 +435,7 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
                   <Label className="text-[10px] uppercase text-muted-foreground">Size</Label>
                   <Input
                     value={v.size}
-                    onChange={(e) => updateVariant(i, { size: e.target.value })}
+                    onChange={(e) => updateVariant(i, { size: e.target.value.toUpperCase() })}
                     className="h-10 text-sm bg-background"
                   />
                 </div>

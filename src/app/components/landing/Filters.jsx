@@ -62,7 +62,7 @@ export default function Filters() {
 
       {/* Filter Section: Size */}
       <section>
-        <h3 className="text-sm font-bold tracking-wider uppercase mb-4 lg:mb-6 text-on-surface">Size (UK)</h3>
+        <h3 className="text-sm font-bold tracking-wider uppercase mb-4 lg:mb-6 text-on-surface">Size</h3>
         <div className="grid grid-cols-4 gap-2">
           {filterData.sizes.map((size) => (
             <button key={size} className={`aspect-square flex items-center justify-center rounded-lg text-sm transition-colors ${size === 5 ? 'border border-primary bg-primary/5 font-bold' : 'border border-outline-variant/30 hover:border-primary'}`}>

@@ -219,7 +219,7 @@ export default function CartPage() {
 											{item.gender} · {item.category}
 										</span>
 										<h3 className="text-sm font-bold text-neutral-800 tracking-tight truncate mt-0.5 md:text-base">{item.name}</h3>
-										<span className="inline-block mt-1 text-[11px] font-semibold px-2 py-0.5 bg-neutral-50 border border-neutral-100 rounded text-neutral-600">Size: UK {item.size}</span>
+										<span className="inline-block mt-1 text-[11px] font-semibold px-2 py-0.5 bg-neutral-50 border border-neutral-100 rounded text-neutral-600">Size: {item.size}</span>
 									</div>
 
 									{/* Interactive Quantity Counter Ring and Subtotals */}

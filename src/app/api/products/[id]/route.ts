@@ -3,6 +3,8 @@ import dbconnect from "@/lib/db";
 import Footware from "@/models/Footware";
 import { uploadToCloudinary, deleteFromCloudinary } from "@/lib/cloudinary";
 import { successResponse, handleApiError, errorResponse } from "@/lib/api-response";
+import { requireAuth, unauthorizedResponse } from "@/lib/checkAuth";
+
 
 
 interface RouteParams {
@@ -44,6 +46,11 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
 export async function PUT(request: NextRequest, { params }: RouteParams) {
     try {
+        const session = await requireAuth();
+
+        if (!session?.user) {
+            return unauthorizedResponse();
+        }
         await dbconnect();
         const formData = await request.formData();
         const { id } = await params;
@@ -112,7 +119,7 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
             // Assign the entirely reconstructed array back to the product
             updateFields.images = newImagesArray;
         }
-        
+
         // 4. Save to Database
         const updatedProduct = await Footware.findOneAndUpdate({ slug: id }, updateFields, { new: true, runValidators: true });
 
@@ -124,6 +131,11 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
 
 export async function DELETE(request: NextRequest, { params }: RouteParams) {
     try {
+        const session = await requireAuth();
+
+        if (!session?.user) {
+            return unauthorizedResponse();
+        }
         await dbconnect();
         const { id } = await params;
         const product = await Footware.findOne({ slug: id });

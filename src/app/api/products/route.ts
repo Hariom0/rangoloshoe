@@ -3,7 +3,7 @@ import Footware from "@/models/Footware";
 import { NextRequest, NextResponse } from "next/server";
 import { uploadToCloudinary } from "@/lib/cloudinary";
 import { successResponse, handleApiError, errorResponse } from "@/lib/api-response";
-
+import { requireAuth, unauthorizedResponse } from "@/lib/checkAuth";
 export async function GET(request: NextRequest) {
 	const searchParams = request.nextUrl.searchParams;
 
@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
 	// FIX: Explicitly check for the string "true"
 	const freshDrop = searchParams.get("fresh-drop") === "true";
 	const bestSeller = searchParams.get("best-seller") === "true";
-	
+
 	// Dynamic query building
 	const filter: Record<string, any> = {};
 	if (category !== "ALL") filter.category = category;
@@ -48,6 +48,12 @@ export async function GET(request: NextRequest) {
 }
 export async function POST(request: NextRequest) {
 	try {
+		const session = await requireAuth();
+
+		if (!session?.user) {
+			return unauthorizedResponse();
+		}
+
 		await dbconnect();
 		const formData = await request.formData();
 
@@ -98,8 +104,8 @@ export async function POST(request: NextRequest) {
 			description,
 			gender,
 			category,
-            is_bestseller,
-            is_fresh_drop,
+			is_bestseller,
+			is_fresh_drop,
 			price,
 			discountPrice,
 			variants,
