@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
 	// 4. OpenGraph Configuration (Controls how links look when shared on WhatsApp/Socials)
 	openGraph: {
-		title: "Rangoli Shoes | Heritage in Every Step",
+		title: "Young Fashion | Redefining Everyday Men's Fashion",
 		description: "Premium Indian heritage footwear crafted since 1984. Experience timeless artisan luxury, rooted right here in Sasamusa.",
 		url: "https://www.rangolishoes.in",
 		siteName: "Rangoli Shoes",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 				url: "/images/og-branding-banner.jpg", // Place a 1200x630px promo banner in your public folder
 				width: 1200,
 				height: 630,
-				alt: "Rangoli Shoes Premium Footwear Showcase Collection",
+				alt: "Young Fashion Everyday Men's Fashion",
 			},
 		],
 		locale: "en_IN",

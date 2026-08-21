@@ -36,8 +36,8 @@ export const GENDERS = ["Men", "Women", "Unisex", "Kids"] as const;
 export const CATEGORIES = [
   "Tshirt",
   "Shirt",
-  "Jean",
-  "Trouser",
+  "Jeans",
+  "Trousers",
   "Jacket",
   "Ethnic",
  

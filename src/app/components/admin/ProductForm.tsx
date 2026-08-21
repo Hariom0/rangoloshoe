@@ -137,7 +137,7 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
       .slice(0, 3);
     setVariants([...variants, { size: nextSize, stock: 1, sku: prefix ? `${prefix}-${nextSize}` : "" }]);
   }
-
+// "XS", "S", "M", "L", "XL", "XXL"
   function updateVariant(i: number, patch: Partial<Variant>) {
     setVariants(variants.map((v, idx) => (idx === i ? { ...v, ...patch } : v)));
   }

@@ -5,16 +5,16 @@
 ========================= */
 :root {
 	/* Colors */
-	--primary: #d5377f;
-	--surface: #b35a7c;
+	--primary: #070707;
+	--surface: #e6e6e6;
 
-	--background: #fff3f3;
+	--background: #F7F7F7;
 	--foreground: #171717;
 
 	--on-primary: 255 255 255;
 	--on-surface: 255 255 255;
 
-	--border-color: #e5e5e5;
+	--border-color: #0a0a0a;
 }
 
 /* =========================
