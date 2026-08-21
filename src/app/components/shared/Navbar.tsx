@@ -215,7 +215,7 @@ export const Navbar = () => {
 								<div className="flex items-start gap-3">
 									<MapPin size={16} className="mt-0.5 shrink-0 text-primary" />
 									<p className="text-sm leading-relaxed text-neutral-600">
-										Canara bank, Gali Station Rd,
+										Haji Market, Main Road,
 										<br />
 										Sasamusa, Bihar 841505
 									</p>

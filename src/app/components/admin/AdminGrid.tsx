@@ -379,7 +379,7 @@ export default function AdminGrid({ category, gender, page }: Props) {
             {hasBaseUrl && !isLoading && !error && (
                 <button
                     onClick={() => openCreate()}
-                    className="fixed bottom-5 right-5 z-30 flex h-14 items-center gap-2 rounded-full bg-primary px-5 font-semibold text-primary-foreground shadow-[var(--shadow-pop)] transition hover:scale-105 active:scale-95"
+                    className="fixed bottom-5 right-5 z-30 flex h-14 items-center gap-2 rounded-full bg-primary px-5 font-semibold text-background shadow-[var(--shadow-pop)] transition hover:scale-105 active:scale-95"
                     aria-label="Add product"
                 >
                     <Plus className="h-5 w-5" />

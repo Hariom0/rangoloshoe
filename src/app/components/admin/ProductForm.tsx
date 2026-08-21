@@ -573,7 +573,7 @@ export function ProductForm({ mode, initial, existingSlugs, onSubmit, submitting
             onClick={submit}
             disabled={submitting}
             size="lg"
-            className="flex-1 sm:flex-none sm:w-48 h-12 text-base font-semibold shadow-lg shadow-primary/20 rounded-xl"
+            className="flex-1 sm:flex-none sm:w-48 h-12 text-base text-background font-semibold shadow-lg shadow-primary/20 rounded-xl"
           >
             {submitting ? (
               <Loader2 className="h-5 w-5 animate-spin" />
