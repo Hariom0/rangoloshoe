@@ -71,7 +71,7 @@ export const Navbar = () => {
 
 					{/* Logo */}
 					<Link href={"/"}>
-						<Image src={"/images/logo.png"} width={150} height={150} alt="logo" priority />
+						<Image src={"/images/logo.png"} width={100} height={100} alt="logo" priority />
 					</Link>
 
 					{/* Desktop Nav */}
