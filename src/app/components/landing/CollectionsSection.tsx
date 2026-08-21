@@ -12,28 +12,28 @@ type Collection = {
 const COLLECTIONS: Collection[] = [
   {
     id: 1,
-    title: "Sneakers",
+    title: "TShirts",
     styles: "24 Styles",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbaF8-fQRmbtqA45FGKEw4_VCVoLxLpZFs9oE6pJz-Jt9I34Wp0kld7mCukswTzdJSWPeA89OJnxY90fmevMKyEHJ-1meduEPStiuSgj-8cytwZUV1A7G3PjvSEih0YYdtmoTmZ73m6noHeiu6_B6Zhq8KXqFu6cC5EEZ-HoQVZdnsvFtW-OzaFqYVd3QOONnMaegCHlOPTC0PvLI-rEtRPsNc0GRu64Rfjrbvx4p7Qugwoth5-c0C8uXgZD_iTwlO4NF4_ojpMBn1",
+    image: "/images/tshirt1.jpg",
   },
   {
     id: 2,
-    title: "Crocs",
+    title: "Shirts",
     styles: "18 Styles",
-    image: "/images/crocs.jpg",
+    image: "/images/shirt.jpg",
     offset: true,
   },
   {
     id: 3,
-    title: "Slides",
+    title: "Jeans",
     styles: "12 Styles",
-    image: "/images/slides.png",
+    image: "/images/jeans.jpg",
   },
   {
     id: 4,
-    title: "Sports",
+    title: "Trousers",
     styles: "20 Styles",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBBWiXOVR40wyqQGr1L761wkoJQaMTIbwUDwctOOn9Dj9SJtQwQHnMbGaVuIqpAUhrWpv7A3fYE7tlUCOSUm5vAoU79I7Roew6nATURh9OARAqqyQEK0lZeVR35ZHc1pSpaKe_w6H2Wwt-CcV2oMAJ_naShSX963e6H1bKFwflOFRa44An3iMCe4PL6NwBJNGwDdZMLNVpiCA1ruirw4GOW8y_dJw0dwr1K2EKzk5PGKa6n8YB1s1IM8hgm24mUFvFDLZxmPVthbcK0",
+    image: "/images/trouser.jpg",
   },
 ];
 

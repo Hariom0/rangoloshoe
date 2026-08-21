@@ -34,7 +34,7 @@ export default async function CollectionPage({ searchParams }: Props) {
 	const gender = params.gender || "";
 	const page = params.page || "1";
 	const response = await getProducts(category, page, gender);
-	const otherCategory = ["Sneakers", "Formal", "Boots", "Sandal", "Sports"];
+	const otherCategory = ["Tshirts", "Shirts", "Jeans", "Trousers", "Jackets","Ethnic"];
 	const uniqueCategory = [...new Set([...otherCategory, ...response.categories])];
 
 	return (

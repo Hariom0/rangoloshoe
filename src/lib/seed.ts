@@ -364,7 +364,7 @@ export default async function seedData() {
 	// await Footware.deleteMany({});
 
 	// Insert the 20 sample items
-	await Footware.insertMany(data);
+	// await Footware.insertMany(data);
 
 	console.log("Database seeded successfully!");
 }
